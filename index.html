@@ -1,1 +1,162 @@
-<p>인덱스페이지 test 입니다.</p>
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
+	<title>BYDA 모니터링 및 관리자 시스템 퍼블리싱</title>
+	<style>
+		*{margin:0;padding:0;}
+		body {font-family:"맑은 고딕", sans-serif;}
+		ul{list-style: none;margin:0;padding:0;}
+		table {border-collapse:collapse; border-spacing:0;}
+		strong {font-weight:normal;}
+		body{margin:20px;}
+		h1{margin:0 0 10px 0;font-weight:normal;font-family:"kia_light";}
+		a {text-decoration:none;color:blue;}
+		a:hover {text-decoration:underline;}
+		.list_w p.tit {padding-bottom:3px;background:#666;color:#fff;font-size:18px;border:0;line-height:40px;text-align:center;}
+		.codinglist {width:100%;text-align:center;}
+		.codinglist th {background:#efefef;color:#333;}
+		.codinglist th,
+		.codinglist td {border:1px solid #ccc;vertical-align:middle;padding:5px;font-size:14px;}
+		.codinglist td:last-child {text-align:left;}
+		.codinglist tr:hover,
+		.codinglist tr.bg {background:#efefef;}
+
+		.border-topline td {border-top:3px solid #333;}
+		.bgss {background:#222;color:#fff;}
+		.bgss a {color:#fff;}
+		.bgss:hover {background:#efefef;color:#333;}
+		.bgss:hover a {color:#333;}
+		.red-text{color:#c5182d;}
+	</style>
+</head>
+<body>
+	<h1>BYDA 모니터링 및 관리자 시스템 퍼블리싱</h1>
+	<div class="list_w">
+		<p class="tit">퍼블리싱 리스트</p>
+		<table class="codinglist">
+			<colgroup>
+				<col style="width:3%;" />
+				<col />
+				<col />
+				<col />
+				<col />
+				<col />
+				<col style="width:8%;" />
+				<col style="width:4%;" />
+				<col style="width:27%;"  />
+			</colgroup>
+			<thead>
+				<tr>
+					<th rowspan="2">no.</th>
+					<th colspan="4">navi</th>
+					<th rowspan="2">filename</th>
+					<th rowspan="2">type</th>
+					<th rowspan="2">작업자</th>
+					<th rowspan="2">etc.</th>
+				</tr>
+				<tr>
+					<th>depth1</th>
+					<th>depth2</th>
+					<th>depth3</th>
+					<th>depth4</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td></td><!-- 번호 -->
+					<td>로그인</td><!-- depth1 -->
+					<td></td><!-- depth2 -->
+					<td></td><!-- depth3 -->
+					<td></td><!-- depth4 -->
+					<td><a href="/html/ss1000.html">ss1000.html</a></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td><!-- 번호 -->
+					<td></td><!-- depth1 -->
+					<td>ID찾기</td><!-- depth2 -->
+					<td></td><!-- depth3 -->
+					<td></td><!-- depth4 -->
+					<td><a href="/html/ss1100.html">ss1100.html</a></td>
+					<td></td>
+					<td></td>
+					<td></td>
+        </tr>
+        <tr>
+					<td></td><!-- 번호 -->
+					<td></td><!-- depth1 -->
+					<td></td><!-- depth2 -->
+					<td>ID찾기결과</td><!-- depth3 -->
+					<td></td><!-- depth4 -->
+					<td><a href="/html/ss1200.html">ss1200.html</a></td>
+					<td>레이어팝업</td>
+					<td></td>
+					<td></td>
+        </tr>
+        <tr>
+					<td></td><!-- 번호 -->
+					<td></td><!-- depth1 -->
+					<td>비번초기화</td><!-- depth2 -->
+					<td></td><!-- depth3 -->
+					<td></td><!-- depth4 -->
+					<td><a href="/html/ss1300.html">ss1300.html</a></td>
+					<td></td>
+					<td></td>
+					<td></td>
+        </tr>
+        <tr>
+					<td></td><!-- 번호 -->
+					<td></td><!-- depth1 -->
+					<td></td><!-- depth2 -->
+					<td>비번변경</td><!-- depth3 -->
+					<td></td><!-- depth4 -->
+					<td><a href="/html/ss1400.html">ss1400.html</a></td>
+					<td>레이어팝업</td>
+					<td></td>
+					<td></td>
+        </tr>
+        <tr>
+					<td></td><!-- 번호 -->
+					<td>모니터링</td><!-- depth1 -->
+					<td>지도모니터링</td><!-- depth2 -->
+					<td></td><!-- depth3 -->
+					<td></td><!-- depth4 -->
+					<td><a href="/html/ss2100.html">ss2100.html</a></td>
+					<td></td>
+					<td></td>
+					<td></td>
+        </tr>
+        <tr>
+					<td></td><!-- 번호 -->
+					<td></td><!-- depth1 -->
+					<td>카메라모니터링</td><!-- depth2 -->
+					<td></td><!-- depth3 -->
+					<td></td><!-- depth4 -->
+					<td><a href="/html/ss2200.html">ss2200.html</a></td>
+					<td></td>
+					<td></td>
+					<td></td>
+        </tr>
+			</tbody>
+		</table>
+	</div>
+	<script>
+		$(function(){
+			$(".codinglist tr").each(function() {
+				var index = $(".codinglist tbody tr").index(this)+1;
+				$(this).children("td:first-child").text(index);
+				$(this).children("td").find('a').attr('target', '_blank');
+			});
+			$(".codinglist tr").on('click', function(){
+				$(".codinglist tr").removeClass('bg');
+				$(this).addClass('bg');
+			});
+		});
+	</script>
+</body>
+</html>
