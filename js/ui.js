@@ -1,0 +1,4 @@
+// publishing UI javascript
+$(function(){
+  
+});
