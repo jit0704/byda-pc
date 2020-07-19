@@ -19,19 +19,20 @@ html {
 
 body {
   height: 100%;
-  color: #5a5a5a;
+  color: #74748a;
   font-family: "Nanum Gothic", "맑은 고딕", "돋음", sans-serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 input, select, textarea, button {
   border: 0;
+  outline: 0;
   background: transparent;
-  color: #5a5a5a;
+  color: #74748a;
   font-family: "Nanum Gothic", "맑은 고딕", "돋음", sans-serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 fieldset, li, img {
@@ -66,15 +67,6 @@ a {
 
 a:focus, a:active {
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-  background-color: transparent;
-}
-
-a:active, a:focus {
-  background-color: transparent;
 }
 
 table {
@@ -226,35 +218,131 @@ table {
   height: inherit;
 }
 
+.btn__regular {
+  display: block;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 800;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.btn__bg--style1 {
+  background: #4d85ff;
+}
+
 .loginbox {
   position: absolute;
   left: 50%;
   top: 50%;
+  width: 400px;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
 
-.loginbox .logo {
+.loginbox .loginbox__inputbox {
+  margin-top: 75px;
+}
+
+.loginbox__logo {
   text-align: center;
 }
 
 .loginbox__inputbox {
-  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-.loginbox__inputbox .loginbox__input {
+.loginbox__bind + .loginbox__bind {
+  margin-top: 38px;
+}
+
+.loginbox__input {
   display: block;
+  border-bottom: 2px solid #74748a;
 }
 
-.loginbox__inputbox .loginbox__input input {
-  height: 50px;
-  line-height: 50px;
-  border-bottom: 3px solid #000;
+.loginbox__input.active {
+  border-bottom-color: #4d85ff;
+}
+
+.loginbox__input input {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 23px;
+  padding-left: 15px;
+  line-height: 20px;
+  font-size: 18px;
+}
+
+.loginbox__inputbox--icon .loginbox__bind {
+  margin-top: 30px;
+}
+
+.loginbox__inputbox--icon .loginbox__input {
+  position: relative;
+}
+
+.loginbox__inputbox--icon .loginbox__input::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15px;
+  width: 36px;
+  height: 36px;
+}
+
+.loginbox__inputbox--icon .loginbox__input:first-child::before {
+  background: url(../images/icon_person.png) no-repeat 0 0;
+}
+
+.loginbox__inputbox--icon .loginbox__input:last-child::before {
+  background: url(../images/icon_lock.png) no-repeat 0 0;
+}
+
+.loginbox__inputbox--icon .loginbox__input input {
+  height: 36px;
+  margin-bottom: 15px;
+  padding-left: 71px;
+  line-height: 36px;
+}
+
+.loginbox__function {
+  margin-top: 40px;
+}
+
+.loginbox__function::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.loginbox__function a {
+  position: relative;
+  float: left;
+  display: block;
+  width: 50%;
+  line-height: 17px;
+  color: #888;
+  text-align: center;
+  font-weight: 800;
+}
+
+.loginbox__function a:first-child::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 0;
+  width: 1px;
+  height: 13px;
+  background: #74748a;
 }
 
 .login-wrap {
   position: relative;
   height: inherit;
-  background: #ddd;
+  background: #141724;
 }
