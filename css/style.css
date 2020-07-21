@@ -143,7 +143,6 @@ table {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAA3hJREFUaAXlm8+K00Acx7MiCIJH/yw+gA9g25O49SL4AO3Bp1jw5NvktC+wF88qevK4BU97EmzxUBCEolK/n5gp3W6TTJPfpNPNF37MNsl85/vN/DaTmU6PknC4K+pniqeKJ3k8UnkvDxXJzzy+q/yaxxeVHxW/FNHjgRSeKt4rFoplzaAuHHDBGR2eS9G54reirsmienDCTRt7xwsp+KAoEmt9nLaGitZxrBbPFNaGfPloGw2t4JVamSt8xYW6Dg1oCYo3Yv+rCGViV160oMkcd8SYKnYV1Nb1aEOjCe6L5ZOiLfF120EjWhuBu3YIZt1NQmujnk5F4MgOpURzLfAwOBSTmzp3fpDxuI/pabxpqOoz2r2HLAb0GMbZKlNV5/Hg9XJypguryA7lPF5KMdTZQzHjqxNPhWhzIuAruOl1eNqKEx1tSh5rfbxdw7mOxCq4qS68ZTjKS1YVvilu559vWvFHhh4rZrdyZ69Vmpgdj8fJbDZLJpNJ0uv1cnr/gjrUhQMuI+ANjyuwftQ0bbL6Erp0mM/ny8Fg4M3LtdRxgMtKl3jwmIHVxYXChFy94/Rmpa/pTbNUhstKV+4Rr8lLQ9KlUvJKLyG8yvQ2s9SBy1Jb7jV5a0yapfF6apaZLjLLcWtd4sNrmJUMHyM+1xibTjH82Zh01TNlhsrOhdKTe00uAzZQmN6+KW+sDa/JD2PSVQ873m29yf+1Q9VDzfEYlHi1G5LKBBWZbtEsHbFwb1oYDwr1ZiF/2bnCSg1OBE/pfr9/bWx26UxJL3ONPISOLKUvQza0LZUxSKyjpdTGa/vDEr25rddbMM0Q3O6Lx3rqFvU+x6UrRKQY7tyrZecmD9FODy8uLizTmilwNj0kraNcAJhOp5aGVwsAGD5VmJBrWWbJSgWT9zrzWepQF47RaGSiKfeGx6Szi3gzmX/HHbihwBser4B9UJYpFBNX4R6vTn3VQnez0SymnrHQMsRYGTr1dSk34ljRqS/EMd2pLQ8YBp3a1PLfcqCpo8gtHkZFHKkTX6fs3MY0blKnth66rKCnU0VRGu37ONrQaA4eZDFtWAu2fXj9zjFkxTBOo8F7t926gTp/83Kyzzcy2kZD6xiqxTYnHLRFm3vHiRSwNSjkz3hoIzo8lCKWUlg/YtGs7tObunDAZfpDLbfEI15zsEIY3U/x/gHHc/G1zltnAgAAAABJRU5ErkJggg==");
 }
 
 .modal-spinner {
@@ -212,6 +211,82 @@ table {
   }
 }
 
+.modal {
+  width: 600px;
+  min-height: 366px;
+  padding: 0;
+  z-index: 100;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: #212637;
+}
+
+.modal a.close-modal {
+  width: 40px;
+  height: 40px;
+  top: 15px;
+  right: 15px;
+  background-image: url(../images/btn_close.png);
+}
+
+.modal .modal-popup__btn {
+  display: block;
+  margin-bottom: 60px;
+  padding: 0 150px;
+}
+
+.modal .modal-popup__btn.modal-popup__btn--size2 {
+  padding: 0 90px;
+}
+
+.modal .modal-popup__btn.modal-popup__btn--size2::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.modal .modal-popup__btn.modal-popup__btn--size2 .btn__regular {
+  display: block;
+  float: left;
+  width: 200px;
+}
+
+.modal .modal-popup__btn.modal-popup__btn--size2 .btn__regular:last-child {
+  float: right;
+}
+
+.modal.modal-popup__alert .modal-popup__content {
+  margin-top: 126px;
+  font-size: 18px;
+}
+
+.modal.modal-popup__alert .modal-popup__btn {
+  margin-top: 100px;
+}
+
+.modal.modal-popup .modal-popup__content {
+  font-size: 16px;
+}
+
+.modal.modal-popup .modal-popup__btn {
+  margin-top: 60px;
+}
+
+.modal-popup__header {
+  margin: 80px 0 60px;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 800;
+  text-align: center;
+}
+
+.modal-popup__content {
+  padding: 0 18px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+}
+
 .wrapper {
   width: 100%;
   min-width: 1920px;
@@ -234,6 +309,19 @@ table {
   background: #4d85ff;
 }
 
+.btn__bg--style2 {
+  background: #141724;
+}
+
+.input__style1 {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  line-height: 50px;
+  background: #49516d;
+  border-radius: 5px;
+}
+
 .loginbox {
   position: absolute;
   left: 50%;
@@ -242,6 +330,11 @@ table {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.loginbox .loginbox__title {
+  text-align: center;
+  color: #fff;
 }
 
 .loginbox .loginbox__inputbox {
@@ -269,6 +362,14 @@ table {
   border-bottom-color: #4d85ff;
 }
 
+.loginbox__input.error {
+  border-bottom-color: #f0233c;
+}
+
+.loginbox__input.error + .loginbox__input--errortxt {
+  display: block;
+}
+
 .loginbox__input input {
   width: 100%;
   height: 20px;
@@ -282,11 +383,19 @@ table {
   margin-top: 30px;
 }
 
-.loginbox__inputbox--icon .loginbox__input {
+.loginbox__inputbox--icon .loginbox__bind:first-child .loginbox__input::before {
+  background: url(../images/icon_person.png) no-repeat 0 0;
+}
+
+.loginbox__inputbox--icon .loginbox__bind:last-child .loginbox__input::before {
+  background: url(../images/icon_lock.png) no-repeat 0 0;
+}
+
+.loginbox__inputbox--icon .loginbox__bind .loginbox__input {
   position: relative;
 }
 
-.loginbox__inputbox--icon .loginbox__input::before {
+.loginbox__inputbox--icon .loginbox__bind .loginbox__input::before {
   content: "";
   position: absolute;
   top: 0;
@@ -295,19 +404,19 @@ table {
   height: 36px;
 }
 
-.loginbox__inputbox--icon .loginbox__input:first-child::before {
-  background: url(../images/icon_person.png) no-repeat 0 0;
-}
-
-.loginbox__inputbox--icon .loginbox__input:last-child::before {
-  background: url(../images/icon_lock.png) no-repeat 0 0;
-}
-
-.loginbox__inputbox--icon .loginbox__input input {
+.loginbox__inputbox--icon .loginbox__bind .loginbox__input input {
   height: 36px;
   margin-bottom: 15px;
   padding-left: 71px;
   line-height: 36px;
+}
+
+.loginbox__input--errortxt {
+  display: none;
+  margin-top: 10px;
+  color: #f0233c;
+  font-size: 13px;
+  font-weight: 400;
 }
 
 .loginbox__function {
@@ -339,6 +448,41 @@ table {
   width: 1px;
   height: 13px;
   background: #74748a;
+}
+
+.modal-popup__pwchange {
+  padding: 0 100px;
+}
+
+.modal-popup__pwchange--form {
+  margin-top: 40px;
+}
+
+.modal-popup__pwchange--form::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.modal-popup__pwchange--form dt {
+  float: left;
+  width: 35%;
+  line-height: 50px;
+  text-align: left;
+  font-weight: 800;
+}
+
+.modal-popup__pwchange--form dt:nth-child(1) {
+  margin-bottom: 20px;
+}
+
+.modal-popup__pwchange--form dd {
+  float: left;
+  width: 65%;
+}
+
+.modal-popup__pwchange--form dd:nth-child(2) {
+  margin-bottom: 20px;
 }
 
 .login-wrap {
