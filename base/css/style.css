@@ -226,7 +226,7 @@ table {
   height: 40px;
   top: 15px;
   right: 15px;
-  background-image: url(../images/btn_close.png);
+  background-image: url(/base/images/btn_close.png);
 }
 
 .modal .modal-popup__btn {
@@ -384,11 +384,11 @@ table {
 }
 
 .loginbox__inputbox--icon .loginbox__bind:first-child .loginbox__input::before {
-  background: url(../images/icon_person.png) no-repeat 0 0;
+  background: url(/base/images/icon_person.png) no-repeat 0 0;
 }
 
 .loginbox__inputbox--icon .loginbox__bind:last-child .loginbox__input::before {
-  background: url(../images/icon_lock.png) no-repeat 0 0;
+  background: url(/base/images/icon_lock.png) no-repeat 0 0;
 }
 
 .loginbox__inputbox--icon .loginbox__bind .loginbox__input {
