@@ -16,6 +16,18 @@ function cmmnui () {
     return false;
   });
 
+  // gnb
+  $('.gnb-list > li').on({
+    'mouseenter': function () {
+      $('.gnb').addClass('active');
+      $('.gnb-list__item').stop().slideDown(280);
+    },
+    'mouseleave': function () {
+      $('.gnb').removeClass('active');
+      $('.gnb-list__item').stop().slideUp(280);
+    }
+  });
+
   // datepicker
   $('#datepicker').datepicker({
     dateFormat: 'yy-mm-dd', //Input Display Format 변경
