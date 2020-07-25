@@ -17,19 +17,21 @@ function cmmnui () {
   });
 
   // gnb
+  var $gnb = $('.gnb');
+  var $gnbItem = $('.gnb-list__item');
   $('.gnb-list > li').on({
     'mouseenter': function () {
-      $('.gnb').addClass('active');
-      $('.gnb-list__item').stop().slideDown(280);
+      $gnb.addClass('active');
+      $gnbItem.stop().slideDown(280);
     },
     'mouseleave': function () {
-      $('.gnb').removeClass('active');
-      $('.gnb-list__item').stop().slideUp(280);
+      $gnb.removeClass('active');
+      $gnbItem.stop().slideUp(280);
     }
   });
 
   // datepicker
-  $('#datepicker').datepicker({
+  $('.input-calendar').datepicker({
     dateFormat: 'yy-mm-dd', //Input Display Format 변경
     showMonthAfterYear: true, //년도 먼저 나오고, 뒤에 월 표시
     yearSuffix: "년", //달력의 년도 부분 뒤에 붙는 텍스트

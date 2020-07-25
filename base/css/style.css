@@ -96,7 +96,7 @@ table {
   width: 100%;
   height: 100%;
   overflow: auto;
-  z-index: 1;
+  z-index: 10;
   padding: 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -213,7 +213,8 @@ table {
 }
 
 .modal {
-  width: 600px;
+  width: auto;
+  min-width: 600px;
   min-height: 366px;
   padding: 0;
   z-index: 100;
@@ -238,6 +239,7 @@ table {
 
 .modal .modal-popup__btn.modal-popup__btn--size2 {
   padding: 0 90px;
+  text-align: center;
 }
 
 .modal .modal-popup__btn.modal-popup__btn--size2::after {
@@ -247,13 +249,12 @@ table {
 }
 
 .modal .modal-popup__btn.modal-popup__btn--size2 .btn__regular {
-  display: block;
-  float: left;
+  display: inline-block;
   width: 200px;
 }
 
-.modal .modal-popup__btn.modal-popup__btn--size2 .btn__regular:last-child {
-  float: right;
+.modal .modal-popup__btn.modal-popup__btn--size2 .btn__regular + .btn__regular {
+  margin-left: 15px;
 }
 
 .modal.modal-popup__alert .modal-popup__content {
@@ -286,6 +287,10 @@ table {
   font-weight: 400;
   color: #fff;
   text-align: center;
+}
+
+.txt-align__center {
+  text-align: center !important;
 }
 
 .wrapper {
@@ -338,6 +343,11 @@ table {
   border-radius: 4px;
 }
 
+.btn__regular.btn__regular--reduce {
+  display: inline-block;
+  width: 200px;
+}
+
 .btn__bg--style1 {
   background: #4d85ff;
 }
@@ -376,6 +386,13 @@ table {
   line-height: 50px;
   background: #49516d;
   border-radius: 4px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.input__style1:disabled {
+  background: #888;
+  color: #141724;
 }
 
 .input__style2 {
@@ -410,12 +427,32 @@ table {
   background: url(/base/images/icon_invertriangle.png) no-repeat 95% 50% #49516d;
 }
 
+.select-box::-ms-expand {
+  display: none;
+}
+
+.select-box:disabled {
+  background: url(/base/images/icon_invertriangle_disabled.png) no-repeat 95% 50% #888;
+  color: #141724;
+  opacity: 1;
+}
+
+.select-box.select-box__custom {
+  height: 50px;
+  line-height: 50px;
+  font-weight: 700;
+}
+
 .select-box.select-box__time {
   background-position: 80% 50%;
 }
 
 .select-box.select-box__time + .select-box__time {
   margin-left: 4px;
+}
+
+.ui-datepicker {
+  z-index: 0 !important;
 }
 
 .loginbox {
@@ -870,6 +907,32 @@ table {
   top: 0;
   right: 0;
   bottom: 0;
+}
+
+.modal-popup__table {
+  padding: 0 160px;
+}
+
+.modal-popup__table table {
+  text-align: left;
+}
+
+.modal-popup__table table tr + tr th,
+.modal-popup__table table tr + tr td {
+  padding-top: 20px;
+}
+
+.modal-popup__table table th {
+  padding-right: 20px;
+}
+
+.modal-popup__table table th:nth-child(3) {
+  padding-left: 48px;
+}
+
+.modal-popup__table table .input__style2,
+.modal-popup__table table .select-box {
+  width: 100%;
 }
 
 .login-wrap {
