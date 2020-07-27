@@ -367,11 +367,11 @@ table {
   text-align: center;
 }
 
-.btn-Exceldown {
+.btn-default {
   display: inline-block;
-  min-width: 120px;
   height: 38px;
   line-height: 38px;
+  padding: 0 20px;
   font-size: 15px;
   color: #fff;
   border-radius: 2px;
@@ -584,7 +584,8 @@ table {
 }
 
 .modal-popup__pwchange {
-  padding: 0 100px;
+  width: 398px;
+  margin: 0 auto;
 }
 
 .modal-popup__pwchange--form {
@@ -777,6 +778,10 @@ table {
   margin-left: 60px;
 }
 
+.form-group__inquiry--bind + .btn__inquiry {
+  margin-left: 40px;
+}
+
 .form-bind {
   display: inline-block;
 }
@@ -848,9 +853,15 @@ table {
 }
 
 .list-table tbody td {
-  line-height: 68px;
+  height: 68px;
+  line-height: 20px;
   background: #212637;
   font-size: 15px;
+}
+
+.list-table__half > .box-wrap__algin--left,
+.list-table__half > .box-wrap__algin--right {
+  width: 49%;
 }
 
 .list-table__paging {

@@ -1,5 +1,8 @@
 // publishing UI javascript
 $(function(){
+  if ($('[include-html]').length !== 0) {
+    includeHTML(); // gnb include (퍼블리싱 확인용)
+  }
   cmmnui();
   loginForm();
 });
@@ -17,18 +20,19 @@ function cmmnui () {
   });
 
   // gnb
-  var $gnb = $('.gnb');
-  var $gnbItem = $('.gnb-list__item');
-  $('.gnb-list > li').on({
-    'mouseenter': function () {
+  setTimeout(function () { // setTimeout()은 퍼블리싱 확인용으로 개발에서는 적용하지 마세요.
+    var $gnb = $('.gnb');
+    var $gnbItem = $('.gnb-list__item');
+    var $gnbSelector = '.gnb-list > li';
+    $(document).on('mouseenter', $gnbSelector, function () {
       $gnb.addClass('active');
       $gnbItem.stop().slideDown(280);
-    },
-    'mouseleave': function () {
+    });
+    $(document).on('mouseleave', $gnbSelector, function () {
       $gnb.removeClass('active');
       $gnbItem.stop().slideUp(280);
-    }
-  });
+    });
+  }, 100);
 
   // datepicker
   $('.input-calendar').datepicker({
