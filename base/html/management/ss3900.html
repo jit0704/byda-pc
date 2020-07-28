@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>관리자 등록</title>
+    <title>시스템 환경 설정 수정</title>
     <script type="text/javascript" src="/base/js/lib/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="/base/js/lib/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/base/js/lib/jquery.modal.min.js"></script>
@@ -15,7 +15,7 @@
     <div class="wrapper">
       <div id="ex1" class="modal modal-popup">
         <div class="modal-popup__header">
-          <span class="modal-popup__title">관리자 등록</span>
+          <span class="modal-popup__title">시스템 환경 설정 수정</span>
         </div>
         <!-- //modal-popup__header -->
         <div class="modal-popup__content">
@@ -29,25 +29,26 @@
               </colgroup>
               <tbody>
                 <tr>
-                  <th>관리자 ID</th>
-                  <td><input type="text" class="input__style1"></td>
-                  <th>관리자 이름</th>
-                  <td><input type="text" class="input__style1"></td>
-                </tr>
-                <tr>
-                  <th>이메일 주소</th>
-                  <td><input type="text" class="input__style1"></td>
-                  <th>전화번호</th>
+                  <th>변수명</th>
+                  <td><input type="text" class="input__style1" disabled></td>
+                  <th>변수값</th>
                   <td><input type="text" class="input__style1"></td>
                 </tr>
                 <tr>
-                  <th>관리자 권한</th>
-                  <td colspan="3">
-                    <span class="check-box">
-                      <input type="checkbox" id="a1" disabled checked="checked">
-                      <label for="a1"><span>체크</span></label>
-                    </span>
-                  </td>
+                  <th>설명</th>
+                  <td colspan="3"><textarea class="textarea"></textarea></td>
+                </tr>
+                <tr>
+                  <th>등록자 ID</th>
+                  <td><input type="text" class="input__style1" value="admin" disabled></td>
+                  <th>수정자 ID</th>
+                  <td><input type="text" class="input__style1" value="admin" disabled></td>
+                </tr>
+                <tr>
+                  <th>등록 일시</th>
+                  <td><input type="text" class="input__style1" value="YYYY-MM-DD HH24:MI:SS" disabled></td>
+                  <th>수정 일시</th>
+                  <td><input type="text" class="input__style1" value="YYYY-MM-DD HH24:MI:SS" disabled></td>
                 </tr>
               </tbody>
             </table>
@@ -56,7 +57,7 @@
         </div>
         <!-- //modal-popup__content -->
         <span class="modal-popup__btn txt-align__center">
-          <a href="# " rel="modal:close" class="btn__regular btn__regular--reduce btn__bg--style1">저장</a>
+          <a href="#" rel="modal:close" class="btn__regular btn__regular--reduce btn__bg--style1">저장</a>
         </span>
         <!-- //modal-popup__btn-wrap -->
       </div>

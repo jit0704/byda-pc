@@ -43,10 +43,13 @@
                 <tr>
                   <th>관리자 권한</th>
                   <td>
-                    <!-- 체크박스 디자인 필요 -->
+                    <span class="check-box">
+                      <input type="checkbox" id="a1">
+                      <label for="a1"><span>체크</span></label>
+                    </span>
                   </td>
                   <th>최종로그인</th>
-                  <td>YYYY-MM-DD HH24:MI:SS</td>
+                  <td><input type="text" class="input__style1" value="YYYY-MM-DD HH24:MI:SS"></td>
                 </tr>
                 <tr>
                   <th>등록자 ID</th>
@@ -66,22 +69,53 @@
           <!-- //modal-popup__table -->
         </div>
         <!-- //modal-popup__content -->
-        <span class="modal-popup__btn modal-popup__btn--size2">
-          <a href="#" rel="modal:close" class="btn__regular btn__bg--style2">삭제</a>
-          <a href="#" rel="modal:close" class="btn__regular btn__bg--style1">저장</a>
+        <span class="modal-popup__btn box-wrap__algin">
+          <span class="box-wrap__algin--left">
+            <a href="#" rel="modal:close" class="btn__regular btn__bg--style2">삭제</a>
+          </span>
+          <span class="box-wrap__algin--right">
+            <a href="#ex2" class="btn__regular btn__bg--style1 btn__modal--open">비밀번호 변경</a>
+            <a href="#" rel="modal:close" class="btn__regular btn__bg--style1">저장</a>
+          </span>
         </span>
         <!-- //modal-popup__btn-wrap -->
       </div>
       <!-- //modal-popup -->
 
-      <a href="#ex1" class="btn__modal--open" style="display: none;">등록</a> <!-- 퍼블리싱 확인용 버튼 -->
+      <!-- 비밀번호 변경 팝업 -->
+      <div id="ex2" class="modal modal-popup">
+        <div class="modal-popup__header">
+          <span class="modal-popup__title">비밀번호 변경</span>
+        </div>
+        <!-- //modal-popup__header -->
+        <div class="modal-popup__content">
+          <div class="modal-popup__pwchange">
+            <dl class="modal-popup__pwchange--form">
+              <dt>비밀번호</dt>
+              <dd><input type="password" class="input__style1"></dd>
+              <dt>비밀번호 확인</dt>
+              <dd><input type="password" class="input__style1"></dd>
+            </dl>
+            <!-- //modal-popup__pwchange--form -->
+          </div>
+          <!-- //modal-popup__pwchange -->
+        </div>
+        <!-- //modal-popup__content -->
+        <span class="modal-popup__btn">
+          <a href="# " rel="modal:close" class="btn__regular btn__bg--style1">저장</a>
+        </span>
+        <!-- //modal-popup__btn-wrap -->
+      </div>
+      <!-- //modal-popup -->
+
+      <a href="#ex1" class="btn__modal--open btn-test" style="display: none;">등록</a> <!-- 퍼블리싱 확인용 버튼 -->
     </div>
     <!-- //wrapper -->
 
     <script>
       // 퍼블리싱 확인용
       $(function () {
-        $('.btn__modal--open').trigger('click');
+        $('.btn-test').trigger('click');
       });
     </script>
   </body>

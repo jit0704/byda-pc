@@ -257,6 +257,18 @@ table {
   margin-left: 15px;
 }
 
+.modal .modal-popup__btn.box-wrap__algin {
+  padding: 0 177px;
+}
+
+.modal .modal-popup__btn.box-wrap__algin .btn__regular {
+  width: 200px;
+}
+
+.modal .modal-popup__btn.box-wrap__algin .box-wrap__algin--right .btn__regular {
+  display: inline-block;
+}
+
 .modal.modal-popup__alert .modal-popup__content {
   margin-top: 126px;
   font-size: 18px;
@@ -287,6 +299,10 @@ table {
   font-weight: 400;
   color: #fff;
   text-align: center;
+}
+
+.txt-align__left {
+  text-align: left !important;
 }
 
 .txt-align__center {
@@ -413,6 +429,22 @@ table {
   background-position: 90% 50%;
 }
 
+.textarea {
+  width: 100%;
+  height: 100px;
+  padding: 15px;
+  background: #49516d;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 15px;
+  resize: none;
+}
+
+.textarea:disabled {
+  background: #888;
+  color: #141724;
+}
+
 .select-box {
   position: relative;
   height: 56px;
@@ -449,6 +481,42 @@ table {
 
 .select-box.select-box__time + .select-box__time {
   margin-left: 4px;
+}
+
+.check-box {
+  position: relative;
+}
+
+.check-box input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.check-box input + label {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: #49516d;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.check-box input:checked + label {
+  background: url(/base/images/icon_check.png) no-repeat 50% 50% #4d85ff;
+}
+
+.check-box input:disabled + label {
+  background: #74748a;
+}
+
+.check-box span {
+  display: none;
 }
 
 .ui-datepicker {
@@ -818,12 +886,14 @@ table {
 
 .list-table th,
 .list-table td {
+  padding: 0 10px;
   text-align: center;
   color: #fff;
 }
 
 .list-table thead th {
-  line-height: 72px;
+  height: 72px;
+  line-height: 25px;
   background: #141724;
   font-size: 18px;
 }
