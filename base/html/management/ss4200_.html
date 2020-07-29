@@ -10,6 +10,20 @@
     <script type="text/javascript" src="/base/js/common/ui.js"></script>
     <link rel="stylesheet" type="text/css" href="/base/css/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="/base/css/style.css" />
+
+    <style>
+      .select-box.select-box__custom,
+      .input__style1 {height:45px;line-height: 45px;}
+
+      .modal-popup__content{padding: 0 40px;} /* 0 */
+      .modal a.close-modal {top: 11px;right:18px;} /* 0 */
+      .modal-popup__header {margin: 0 0 20px 0;padding:20px 0;background: #2e3345;border-radius: 8px 8px 0 0;font-size: 22px;} /* 0 */
+      .modal-popup__table {padding: 0;} /* 0 */
+      .modal.modal-popup .modal-popup__btn {margin-top:30px;} /* 0 */
+      .modal .modal-popup__btn {margin-bottom: 30px;} /* 0 */
+      .modal .modal-popup__btn.modal-popup__btn--size2 .btn__regular {width:150px;} /* 0 */
+      .modal .modal-popup__btn .btn__regular {height:52px;line-height: 52px;font-size:18px;} /* 0 */
+    </style>
   </head>
   <body>
     <div class="wrapper">
@@ -23,9 +37,9 @@
             <table>
               <colgroup>
                 <col />
-                <col style="width:280px;" />
+                <col style="width:220px;" />
                 <col />
-                <col style="width:280px;" />
+                <col style="width:220px;" />
               </colgroup>
               <tbody>
                 <tr>
@@ -41,7 +55,7 @@
                   <td><input type="text" class="input__style1"></td>
                 </tr>
                 <tr>
-                  <td colspan="4">* RADAR 정보 변경은 로컬제어기에서 작업하시기 바랍니다.</td>
+                  <td colspan="4" style="color:yellow;">* RADAR 정보 변경은 로컬제어기에서 작업하시기 바랍니다.</td>
                 </tr>
                 <tr>
                   <th>위도</th>
@@ -100,13 +114,9 @@
           <!-- //modal-popup__table -->
         </div>
         <!-- //modal-popup__content -->
-        <span class="modal-popup__btn box-wrap__algin">
-          <span class="box-wrap__algin--left">
-            <a href="#" rel="modal:close" class="btn__regular btn__bg--style2">삭제</a>
-          </span>
-          <span class="box-wrap__algin--right">
-            <a href="#" rel="modal:close" class="btn__regular btn__bg--style1">저장</a>
-          </span>
+        <span class="modal-popup__btn modal-popup__btn--size2">
+          <a href="#" rel="modal:close" class="btn__regular btn__bg--style2">삭제</a>
+          <a href="#" rel="modal:close" class="btn__regular btn__bg--style1">저장</a>
         </span>
         <!-- //modal-popup__btn-wrap -->
       </div>
