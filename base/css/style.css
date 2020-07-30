@@ -662,7 +662,7 @@ table {
 .modal-popup__pwchange--form dt {
   float: left;
   width: 35%;
-  line-height: 50px;
+  line-height: 45px;
   text-align: left;
   font-weight: 800;
 }
@@ -1019,4 +1019,225 @@ table {
   text-align: center;
   color: #fff;
   border-radius: 25px;
+}
+
+.monitering-wrap {
+  padding: 30px 40px;
+}
+
+.monitering-map {
+  position: relative;
+  height: 360px;
+  border-radius: 8px;
+}
+
+.monitering-map .monitering__mark {
+  position: absolute;
+  background: url(/base/images/icon_monitering.png) no-repeat 0 0;
+}
+
+.monitering-map .monitering__mark--car {
+  width: 15px;
+  height: 15px;
+  background-position: 0 -254px;
+}
+
+.monitering-map .monitering__mark--camera {
+  width: 42px;
+  height: 56px;
+}
+
+.monitering-map .monitering__mark--camera.left.on {
+  background-position: 0 -7px;
+}
+
+.monitering-map .monitering__mark--camera.left.close {
+  background-position: -42px -7px;
+}
+
+.monitering-map .monitering__mark--camera.left.off {
+  height: 63px;
+  background-position: -84px 0;
+}
+
+.monitering-map .monitering__mark--camera.right.on {
+  background-position: -126px -7px;
+}
+
+.monitering-map .monitering__mark--camera.right.close {
+  background-position: -168px -7px;
+}
+
+.monitering-map .monitering__mark--camera.right.off {
+  height: 63px;
+  background-position: -210px 0;
+}
+
+.monitering-map .monitering__mark--camera2 {
+  width: 42px;
+  height: 56px;
+}
+
+.monitering-map .monitering__mark--camera2.left.on {
+  background-position: 0 -70px;
+}
+
+.monitering-map .monitering__mark--camera2.left.close {
+  background-position: -42px -70px;
+}
+
+.monitering-map .monitering__mark--camera2.left.off {
+  height: 63px;
+  background-position: -84px -63px;
+}
+
+.monitering-map .monitering__mark--camera2.right.on {
+  background-position: -126px -70px;
+}
+
+.monitering-map .monitering__mark--camera2.right.close {
+  background-position: -168px -70px;
+}
+
+.monitering-map .monitering__mark--camera2.right.off {
+  height: 63px;
+  background-position: -210px -63px;
+}
+
+.monitering-map .monitering__mark--radar {
+  width: 42px;
+  height: 56px;
+}
+
+.monitering-map .monitering__mark--radar.left.on {
+  background-position: 0 -134px;
+}
+
+.monitering-map .monitering__mark--radar.left.close {
+  background-position: -42px -134px;
+}
+
+.monitering-map .monitering__mark--radar.left.off {
+  height: 64px;
+  background-position: -84px -126px;
+}
+
+.monitering-map .monitering__mark--radar.right.on {
+  background-position: -126px -134px;
+}
+
+.monitering-map .monitering__mark--radar.right.close {
+  background-position: -168px -134px;
+}
+
+.monitering-map .monitering__mark--radar.right.off {
+  height: 63px;
+  background-position: -210px -126px;
+}
+
+.monitering-map .monitering__mark--radar.top.on {
+  background-position: 0 -198px;
+}
+
+.monitering-map .monitering__mark--radar.top.close {
+  background-position: -42px -198px;
+}
+
+.monitering-map .monitering__mark--radar.top.off {
+  height: 64px;
+  background-position: -84px -190px;
+}
+
+.monitering-map .monitering__mark--radar.bottom.on {
+  background-position: -126px -198px;
+}
+
+.monitering-map .monitering__mark--radar.bottom.close {
+  background-position: -168px -198px;
+}
+
+.monitering-map .monitering__mark--radar.bottom.off {
+  height: 63px;
+  background-position: -210px -190px;
+}
+
+.monitering-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 30px;
+}
+
+.monitering-content .monitering-content__left {
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-right: 30px;
+}
+
+.monitering-content .monitering-content__right {
+  -ms-flex-preferred-size: 1020px;
+      flex-basis: 1020px;
+}
+
+.monitering-content .monitering-content__right .monitering-item {
+  width: 310px;
+}
+
+.monitering-content .monitering-content__right .monitering-item .monitering-item__ipcamera {
+  height: 220px;
+}
+
+.monitering-item + .monitering-item {
+  margin-top: 20px;
+}
+
+.monitering-item .monitering-item__title {
+  display: block;
+  padding: 0 15px;
+  line-height: 35px;
+  background: #141724;
+  color: #fff;
+  font-size: 11px;
+  border-radius: 8px 8px 0 0;
+}
+
+.monitering-item .monitering-item__title .box-wrap__algin--right a {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+  background: url(/base/images/icon_etc.png) no-repeat 0 0;
+}
+
+.monitering-item .monitering-item__title .box-wrap__algin--right .btn-monitering__extend {
+  margin-right: 5px;
+}
+
+.monitering-item .monitering-item__title .box-wrap__algin--right .btn-monitering__close {
+  background-position: -13px 0;
+}
+
+.monitering-item .monitering-item__content {
+  min-height: 220px;
+  background: #212637;
+  border-radius: 0 0 8px 8px;
+}
+
+.monitering-item .monitering-item__content .monitering-item__chart {
+  padding: 10px 30px;
+}
+
+.monitering-item .monitering-item__content .list-table th {
+  height: 52px;
+  font-size: 15px;
+  background: #4d85ff;
+  border-radius: 0;
+}
+
+.monitering-item .monitering-item__content .list-table td {
+  height: 52px;
+  font-size: 13px;
 }
