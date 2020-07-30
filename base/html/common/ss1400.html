@@ -13,31 +13,33 @@
   </head>
   <body>
     <div class="wrapper">
-      <div id="ex1" class="modal modal-popup">
-        <div class="modal-popup__header">
-          <span class="modal-popup__title">비밀번호 변경</span>
-        </div>
-        <!-- //modal-popup__header -->
-        <div class="modal-popup__content">
-          <div class="modal-popup__pwchange">
-            <p class="modal-popup__pwchange--text">비밀번호를 변경하여 로그인 하시기 바랍니다.</p>
-            <dl class="modal-popup__pwchange--form">
-              <dt>비밀번호</dt>
-              <dd><input type="password" class="input__style1"></dd>
-              <dt>비밀번호 확인</dt>
-              <dd><input type="password" class="input__style1"></dd>
-            </dl>
-            <!-- //modal-popup__pwchange--form -->
+      <div id="ex1" class="modal">
+        <div class="modal-popup">
+          <div class="modal-popup__header">
+            <span class="modal-popup__title">비밀번호 변경</span>
           </div>
-          <!-- //modal-popup__pwchange -->
+          <!-- //modal-popup__header -->
+          <div class="modal-popup__content">
+            <div class="modal-popup__pwchange">
+              <p class="modal-popup__pwchange--text">비밀번호를 변경하여 로그인 하시기 바랍니다.</p>
+              <dl class="modal-popup__pwchange--form">
+                <dt>비밀번호</dt>
+                <dd><input type="password" class="input__style1"></dd>
+                <dt>비밀번호 확인</dt>
+                <dd><input type="password" class="input__style1"></dd>
+              </dl>
+              <!-- //modal-popup__pwchange--form -->
+            </div>
+            <!-- //modal-popup__pwchange -->
+          </div>
+          <!-- //modal-popup__content -->
+          <span class="modal-popup__btn">
+            <a href="# " rel="modal:close" class="btn__regular btn__bg--style1">저장</a>
+          </span>
+          <!-- //modal-popup__btn-wrap -->
         </div>
-        <!-- //modal-popup__content -->
-        <span class="modal-popup__btn">
-          <a href="# " rel="modal:close" class="btn__regular btn__bg--style1">저장</a>
-        </span>
-        <!-- //modal-popup__btn-wrap -->
+        <!-- //modal-popup -->
       </div>
-      <!-- //modal-popup -->
 
       <a href="#ex1" class="btn__modal--open" style="display: none;">비밀번호 찾기</a> <!-- 퍼블리싱 확인용 버튼 -->
     </div>

@@ -214,7 +214,6 @@ table {
 
 .modal {
   width: auto;
-  min-width: 500px;
   padding: 0;
   z-index: 100;
   -webkit-box-shadow: none;
@@ -252,32 +251,36 @@ table {
   margin-left: 10px;
 }
 
-.modal.modal-popup__alert {
+.modal .modal-popup__alert {
   width: 400px;
   min-width: auto;
 }
 
-.modal.modal-popup__alert .modal-popup__content {
+.modal .modal-popup__alert .modal-popup__content {
   margin-top: 70px;
   font-size: 16px;
 }
 
-.modal.modal-popup__alert .modal-popup__btn {
+.modal .modal-popup__alert .modal-popup__btn {
   margin-top: 30px;
 }
 
-.modal.modal-popup__alert .modal-popup__btn .btn__regular {
+.modal .modal-popup__alert .modal-popup__btn .btn__regular {
   width: 130px;
   height: 45px;
   line-height: 45px;
   font-size: 16px;
 }
 
-.modal.modal-popup .modal-popup__content {
+.modal .modal-popup {
+  min-width: 500px;
+}
+
+.modal .modal-popup .modal-popup__content {
   font-size: 16px;
 }
 
-.modal.modal-popup .modal-popup__btn {
+.modal .modal-popup .modal-popup__btn {
   margin-top: 30px;
 }
 
@@ -305,6 +308,10 @@ table {
 
 .txt-align__center {
   text-align: center !important;
+}
+
+.txt-yellow {
+  color: yellow !important;
 }
 
 .wrapper {
@@ -661,7 +668,7 @@ table {
 
 .modal-popup__pwchange--form dt {
   float: left;
-  width: 35%;
+  width: 31%;
   line-height: 45px;
   text-align: left;
   font-weight: 800;
@@ -1174,20 +1181,12 @@ table {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  margin-right: 30px;
 }
 
 .monitering-content .monitering-content__right {
   -ms-flex-preferred-size: 1020px;
       flex-basis: 1020px;
-}
-
-.monitering-content .monitering-content__right .monitering-item {
-  width: 310px;
-}
-
-.monitering-content .monitering-content__right .monitering-item .monitering-item__ipcamera {
-  height: 220px;
+  padding-left: 30px;
 }
 
 .monitering-item + .monitering-item {
@@ -1240,4 +1239,28 @@ table {
 .monitering-item .monitering-item__content .list-table td {
   height: 52px;
   font-size: 13px;
+}
+
+.monitering-content__ipcamera {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.monitering-content__ipcamera .monitering-item {
+  width: 310px;
+  margin-top: 0;
+}
+
+.monitering-content__ipcamera .monitering-item:nth-child(4), .monitering-content__ipcamera .monitering-item:nth-child(5), .monitering-content__ipcamera .monitering-item:nth-child(6) {
+  margin-top: 20px;
+}
+
+.monitering-content__ipcamera .monitering-item .monitering-item__ipcamera {
+  height: 220px;
 }

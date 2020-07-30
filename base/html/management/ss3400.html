@@ -13,54 +13,56 @@
   </head>
   <body>
     <div class="wrapper">
-      <div id="ex1" class="modal modal-popup">
-        <div class="modal-popup__header">
-          <span class="modal-popup__title">관리자 등록</span>
-        </div>
-        <!-- //modal-popup__header -->
-        <div class="modal-popup__content">
-          <div class="modal-popup__table">
-            <table>
-              <colgroup>
-                <col />
-                <col style="width:280px;" />
-                <col />
-                <col style="width:280px;" />
-              </colgroup>
-              <tbody>
-                <tr>
-                  <th>관리자 ID</th>
-                  <td><input type="text" class="input__style1"></td>
-                  <th>관리자 이름</th>
-                  <td><input type="text" class="input__style1"></td>
-                </tr>
-                <tr>
-                  <th>이메일 주소</th>
-                  <td><input type="text" class="input__style1"></td>
-                  <th>전화번호</th>
-                  <td><input type="text" class="input__style1"></td>
-                </tr>
-                <tr>
-                  <th>관리자 권한</th>
-                  <td colspan="3">
-                    <span class="check-box">
-                      <input type="checkbox" id="a1">
-                      <label for="a1"><span>체크</span></label>
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+      <div id="ex1" class="modal">
+        <div class="modal-popup">
+          <div class="modal-popup__header">
+            <span class="modal-popup__title">관리자 등록</span>
           </div>
-          <!-- //modal-popup__table -->
+          <!-- //modal-popup__header -->
+          <div class="modal-popup__content">
+            <div class="modal-popup__table">
+              <table>
+                <colgroup>
+                  <col />
+                  <col style="width:280px;" />
+                  <col />
+                  <col style="width:280px;" />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th>관리자 ID</th>
+                    <td><input type="text" class="input__style1"></td>
+                    <th>관리자 이름</th>
+                    <td><input type="text" class="input__style1"></td>
+                  </tr>
+                  <tr>
+                    <th>이메일 주소</th>
+                    <td><input type="text" class="input__style1"></td>
+                    <th>전화번호</th>
+                    <td><input type="text" class="input__style1"></td>
+                  </tr>
+                  <tr>
+                    <th>관리자 권한</th>
+                    <td colspan="3">
+                      <span class="check-box">
+                        <input type="checkbox" id="a1">
+                        <label for="a1"><span>체크</span></label>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- //modal-popup__table -->
+          </div>
+          <!-- //modal-popup__content -->
+          <span class="modal-popup__btn txt-align__center">
+            <a href="# " rel="modal:close" class="btn__regular btn__regular--reduce btn__bg--style1">저장</a>
+          </span>
+          <!-- //modal-popup__btn-wrap -->
         </div>
-        <!-- //modal-popup__content -->
-        <span class="modal-popup__btn txt-align__center">
-          <a href="# " rel="modal:close" class="btn__regular btn__regular--reduce btn__bg--style1">저장</a>
-        </span>
-        <!-- //modal-popup__btn-wrap -->
+        <!-- //modal-popup -->
       </div>
-      <!-- //modal-popup -->
 
       <a href="#ex1" class="btn__modal--open" style="display: none;">등록</a> <!-- 퍼블리싱 확인용 버튼 -->
     </div>

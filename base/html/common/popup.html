@@ -64,15 +64,17 @@
     <p><a href="#ex1" class="btn__modal--open ex-btn">시스템 alert 팝업</a></p>
   </div>
 
-  <div id="ex1" class="modal modal-popup__alert">
-    <div class="modal-popup__content">
-      <p class="modal-popup__text">내용이 들어갑니다..</p>
+  <div id="ex1" class="modal">
+    <div class="modal-popup__alert">
+      <div class="modal-popup__content">
+        <p class="modal-popup__text">내용이 들어갑니다..</p>
+      </div>
+      <!-- //modal-popup__content -->
+      <span class="modal-popup__btn">
+        <a href="# " rel="modal:close" class="btn__regular btn__bg--style1">확인</a>
+      </span>
+      <!-- //modal-popup__btn-wrap -->
     </div>
-    <!-- //modal-popup__content -->
-    <span class="modal-popup__btn">
-      <a href="# " rel="modal:close" class="btn__regular btn__bg--style1">확인</a>
-    </span>
-    <!-- //modal-popup__btn-wrap -->
   </div>
 
   <h1>시스템 confirm 팝업 예제</h1>
@@ -86,16 +88,18 @@
     <p><a href="#ex2" class="btn__modal--open ex-btn">시스템 confirm 팝업</a></p>
   </div>
 
-  <div id="ex2" class="modal modal-popup__alert">
-    <div class="modal-popup__content">
-      <p class="modal-popup__text">내용이 들어갑니다.. 내용이 들어갑니다.. 내용이 들어갑니다.. 내용이 들어갑니다..</p>
+  <div id="ex2" class="modal">
+    <div class="modal-popup__alert">
+      <div class="modal-popup__content">
+        <p class="modal-popup__text">내용이 들어갑니다.. 내용이 들어갑니다.. 내용이 들어갑니다.. 내용이 들어갑니다..</p>
+      </div>
+      <!-- //modal-popup__content -->
+      <span class="modal-popup__btn modal-popup__btn--size2">
+        <a href="# " rel="modal:close" class="btn__regular btn__bg--style2">취소</a>
+        <a href="# " rel="modal:close" class="btn__regular btn__bg--style1">확인</a>
+      </span>
+      <!-- //modal-popup__btn-wrap -->
     </div>
-    <!-- //modal-popup__content -->
-    <span class="modal-popup__btn modal-popup__btn--size2">
-      <a href="# " rel="modal:close" class="btn__regular btn__bg--style2">취소</a>
-      <a href="# " rel="modal:close" class="btn__regular btn__bg--style1">확인</a>
-    </span>
-    <!-- //modal-popup__btn-wrap -->
   </div>
 
   <h1>공통 모달 팝업 예제</h1>
@@ -109,22 +113,24 @@
     <p><a href="#ex3" class="btn__modal--open ex-btn">공통 모달 팝업</a></p>
   </div>
 
-  <div id="ex3" class="modal modal-popup">
-    <div class="modal-popup__header">
-      <span class="modal-popup__title">아이디 찾기 결과</span>
+  <div id="ex3" class="modal">
+    <div class="modal-popup">
+      <div class="modal-popup__header">
+        <span class="modal-popup__title">아이디 찾기 결과</span>
+      </div>
+      <!-- //modal-popup__header -->
+      <div class="modal-popup__content">
+        <p class="modal-popup__text">등록된 ID는 [XXXXXX] 입니다.</p>
+      </div>
+      <!-- //modal-popup__content -->
+      <span class="modal-popup__btn modal-popup__btn--size2">
+        <a href="# " rel="modal:close" class="btn__regular btn__bg--style2">확인</a>
+        <a href="# " rel="modal:close" class="btn__regular btn__bg--style1">재조회</a>
+      </span>
+      <!-- //modal-popup__btn-wrap -->
     </div>
-    <!-- //modal-popup__header -->
-    <div class="modal-popup__content">
-      <p class="modal-popup__text">등록된 ID는 [XXXXXX] 입니다.</p>
-    </div>
-    <!-- //modal-popup__content -->
-    <span class="modal-popup__btn modal-popup__btn--size2">
-      <a href="# " rel="modal:close" class="btn__regular btn__bg--style2">확인</a>
-      <a href="# " rel="modal:close" class="btn__regular btn__bg--style1">재조회</a>
-    </span>
-    <!-- //modal-popup__btn-wrap -->
+    <!-- //modal-popup -->
   </div>
-  <!-- //modal-popup -->
 
   <h1>이중팝업 예제</h1>
   <dl class="code-view">
@@ -136,38 +142,43 @@
   <div class="bind">
     <p><a href="#ex4" class="btn__modal--open ex-btn">이중 팝업</a></p>
   </div>
-  <div id="ex4" class="modal modal-popup">
-    <div class="modal-popup__header">
-      <span class="modal-popup__title">아이디 찾기 결과</span>
-    </div>
-    <!-- //modal-popup__header -->
-    <div class="modal-popup__content">
-      <p class="modal-popup__text"><a href="#ex5" class="btn__modal--open">두번째 서브 모달 팝업 호출</a></p>
-    </div>
-    <!-- //modal-popup__content -->
-    <span class="modal-popup__btn modal-popup__btn--size2">
-      <a href="# " rel="modal:close" class="btn__regular btn__bg--style2">확인</a>
-      <a href="# " rel="modal:close" class="btn__regular btn__bg--style1">재조회</a>
-    </span>
-    <!-- //modal-popup__btn-wrap -->
-  </div>
-  <!-- //modal-popup -->
 
-  <div id="ex5" class="modal modal-popup">
-    <div class="modal-popup__header">
-      <span class="modal-popup__title">서브 모달 팝업 입니다.</span>
+  <div id="ex4" class="modal">
+    <div class="modal-popup">
+      <div class="modal-popup__header">
+        <span class="modal-popup__title">아이디 찾기 결과</span>
+      </div>
+      <!-- //modal-popup__header -->
+      <div class="modal-popup__content">
+        <p class="modal-popup__text"><a href="#ex5" class="btn__modal--open">두번째 서브 모달 팝업 호출</a></p>
+      </div>
+      <!-- //modal-popup__content -->
+      <span class="modal-popup__btn modal-popup__btn--size2">
+        <a href="# " rel="modal:close" class="btn__regular btn__bg--style2">확인</a>
+        <a href="# " rel="modal:close" class="btn__regular btn__bg--style1">재조회</a>
+      </span>
+      <!-- //modal-popup__btn-wrap -->
     </div>
-    <!-- //modal-popup__header -->
-    <div class="modal-popup__content">
-      <p class="modal-popup__text">두번째 두번째22222222</p>
-    </div>
-    <!-- //modal-popup__content -->
-    <span class="modal-popup__btn">
-      <a href="# " rel="modal:close" class="btn__regular btn__bg--style1">확인</a>
-    </span>
-    <!-- //modal-popup__btn-wrap -->
+    <!-- //modal-popup -->
   </div>
-  <!-- //modal-popup -->
+
+  <div id="ex5" class="modal">
+    <div class="modal-popup">
+      <div class="modal-popup__header">
+        <span class="modal-popup__title">서브 모달 팝업 입니다.</span>
+      </div>
+      <!-- //modal-popup__header -->
+      <div class="modal-popup__content">
+        <p class="modal-popup__text">두번째 두번째22222222</p>
+      </div>
+      <!-- //modal-popup__content -->
+      <span class="modal-popup__btn">
+        <a href="# " rel="modal:close" class="btn__regular btn__bg--style1">확인</a>
+      </span>
+      <!-- //modal-popup__btn-wrap -->
+    </div>
+    <!-- //modal-popup -->
+  </div>
 
   <!-- <h1>datepicker</h1>
   <input type="text" id="datepicker"> -->

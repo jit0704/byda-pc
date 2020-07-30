@@ -13,87 +13,89 @@
   </head>
   <body>
     <div class="wrapper">
-      <div id="ex1" class="modal modal-popup">
-        <div class="modal-popup__header">
-          <span class="modal-popup__title">RADAR 등록</span>
-        </div>
-        <!-- //modal-popup__header -->
-        <div class="modal-popup__content">
-          <div class="modal-popup__table">
-            <table>
-              <colgroup>
-                <col />
-                <col style="width:280px;" />
-                <col />
-                <col style="width:280px;" />
-              </colgroup>
-              <tbody>
-                <tr>
-                  <th>RADAR ID</th>
-                  <td><input type="text" class="input__style1"></td>
-                  <th>MAC Address</th>
-                  <td><input type="text" class="input__style1" value="READONLY" disabled></td>
-                </tr>
-                <tr>
-                  <th>IP ADDR</th>
-                  <td><input type="text" class="input__style1"></td>
-                  <th>PORT</th>
-                  <td><input type="text" class="input__style1"></td>
-                </tr>
-                <tr>
-                  <td colspan="4">* RADAR 정보 변경은 로컬제어기에서 작업하시기 바랍니다.</td>
-                </tr>
-                <tr>
-                  <th>위도</th>
-                  <td><input type="text" class="input__style1"></td>
-                  <th>경도</th>
-                  <td><input type="text" class="input__style1"></td>
-                </tr>
-                <tr>
-                  <th>각도</th>
-                  <td><input type="text" class="input__style1"></td>
-                  <th>레이다 방향</th>
-                  <td>
-                    <select class="select-box select-box__custom">
-                      <option>동</option>
-                      <option>서</option>
-                      <option>남</option>
-                      <option>북</option>
-                    </select>
-                  </td>
-                </tr>
-                <tr>
-                  <th>MODE</th>
-                  <td>
-                    <select class="select-box select-box__custom" disabled>
-                      <option>READONLY</option>
-                    </select>
-                  </td>
-                  <th>프로토콜</th>
-                  <td><input type="text" value="READONLY" class="input__style1" disabled></td>
-                </tr>
-                <tr>
-                  <th>설치일시</th>
-                  <td><input type="text" class="input__style1"></td>
-                  <th>상태</th>
-                  <td>
-                    <select class="select-box select-box__custom" disabled>
-                      <option>READONLY</option>
-                    </select>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+      <div id="ex1" class="modal">
+        <div class="modal-popup">
+          <div class="modal-popup__header">
+            <span class="modal-popup__title">RADAR 등록</span>
           </div>
-          <!-- //modal-popup__table -->
+          <!-- //modal-popup__header -->
+          <div class="modal-popup__content">
+            <div class="modal-popup__table">
+              <table>
+                <colgroup>
+                  <col />
+                  <col style="width:280px;" />
+                  <col />
+                  <col style="width:280px;" />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th>RADAR ID</th>
+                    <td><input type="text" class="input__style1"></td>
+                    <th>MAC Address</th>
+                    <td><input type="text" class="input__style1" value="READONLY" disabled></td>
+                  </tr>
+                  <tr>
+                    <th>IP ADDR</th>
+                    <td><input type="text" class="input__style1"></td>
+                    <th>PORT</th>
+                    <td><input type="text" class="input__style1"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="4" class="txt-yellow">* RADAR 정보 변경은 로컬제어기에서 작업하시기 바랍니다.</td>
+                  </tr>
+                  <tr>
+                    <th>위도</th>
+                    <td><input type="text" class="input__style1"></td>
+                    <th>경도</th>
+                    <td><input type="text" class="input__style1"></td>
+                  </tr>
+                  <tr>
+                    <th>각도</th>
+                    <td><input type="text" class="input__style1"></td>
+                    <th>레이다 방향</th>
+                    <td>
+                      <select class="select-box select-box__custom">
+                        <option>동</option>
+                        <option>서</option>
+                        <option>남</option>
+                        <option>북</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>MODE</th>
+                    <td>
+                      <select class="select-box select-box__custom" disabled>
+                        <option>READONLY</option>
+                      </select>
+                    </td>
+                    <th>프로토콜</th>
+                    <td><input type="text" value="READONLY" class="input__style1" disabled></td>
+                  </tr>
+                  <tr>
+                    <th>설치일시</th>
+                    <td><input type="text" class="input__style1"></td>
+                    <th>상태</th>
+                    <td>
+                      <select class="select-box select-box__custom" disabled>
+                        <option>READONLY</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- //modal-popup__table -->
+          </div>
+          <!-- //modal-popup__content -->
+          <span class="modal-popup__btn txt-align__center">
+            <a href="# " rel="modal:close" class="btn__regular btn__regular--reduce btn__bg--style1">저장</a>
+          </span>
+          <!-- //modal-popup__btn-wrap -->
         </div>
-        <!-- //modal-popup__content -->
-        <span class="modal-popup__btn txt-align__center">
-          <a href="# " rel="modal:close" class="btn__regular btn__regular--reduce btn__bg--style1">저장</a>
-        </span>
-        <!-- //modal-popup__btn-wrap -->
+        <!-- //modal-popup -->
       </div>
-      <!-- //modal-popup -->
 
       <a href="#ex1" class="btn__modal--open" style="display: none;">RADAR 등록</a> <!-- 퍼블리싱 확인용 버튼 -->
     </div>

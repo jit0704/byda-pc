@@ -13,63 +13,65 @@
   </head>
   <body>
     <div class="wrapper">
-      <div id="ex1" class="modal modal-popup">
-        <div class="modal-popup__header">
-          <span class="modal-popup__title">IP 카메라 등록</span>
-        </div>
-        <!-- //modal-popup__header -->
-        <div class="modal-popup__content">
-          <div class="modal-popup__table">
-            <table>
-              <colgroup>
-                <col />
-                <col style="width:280px;" />
-                <col />
-                <col style="width:280px;" />
-              </colgroup>
-              <tbody>
-                <tr>
-                  <th>Camera ID</th>
-                  <td><input type="text" class="input__style1"></td>
-                  <th>IP ADDR</th>
-                  <td><input type="text" class="input__style1"></td>
-                </tr>
-                <tr>
-                  <th>연동 RADAR ID</th>
-                  <td>
-                    <select class="select-box select-box__custom">
-                      <option></option>
-                      <option></option>
-                      <option></option>
-                      <option></option>
-                    </select>
-                  </td>
-                  <th>PORT</th>
-                  <td><input type="text" class="input__style1"></td>
-                </tr>
-                <tr>
-                  <th>카메라 방향</th>
-                  <td colspan="3">
-                    <select class="select-box select-box__custom" style="width:280px;">
-                      <option></option>
-                      <option></option>
-                      <option></option>
-                      <option></option>
-                    </select>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+      <div id="ex1" class="modal">
+        <div class="modal-popup">
+          <div class="modal-popup__header">
+            <span class="modal-popup__title">IP 카메라 등록</span>
           </div>
-          <!-- //modal-popup__table -->
+          <!-- //modal-popup__header -->
+          <div class="modal-popup__content">
+            <div class="modal-popup__table">
+              <table>
+                <colgroup>
+                  <col />
+                  <col style="width:280px;" />
+                  <col />
+                  <col style="width:280px;" />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th>Camera ID</th>
+                    <td><input type="text" class="input__style1"></td>
+                    <th>IP ADDR</th>
+                    <td><input type="text" class="input__style1"></td>
+                  </tr>
+                  <tr>
+                    <th>연동 RADAR ID</th>
+                    <td>
+                      <select class="select-box select-box__custom">
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                      </select>
+                    </td>
+                    <th>PORT</th>
+                    <td><input type="text" class="input__style1"></td>
+                  </tr>
+                  <tr>
+                    <th>카메라 방향</th>
+                    <td colspan="3">
+                      <select class="select-box select-box__custom" style="width:280px;">
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- //modal-popup__table -->
+          </div>
+          <!-- //modal-popup__content -->
+          <span class="modal-popup__btn txt-align__center">
+            <a href="# " rel="modal:close" class="btn__regular btn__regular--reduce btn__bg--style1">저장</a>
+          </span>
+          <!-- //modal-popup__btn-wrap -->
         </div>
-        <!-- //modal-popup__content -->
-        <span class="modal-popup__btn txt-align__center">
-          <a href="# " rel="modal:close" class="btn__regular btn__regular--reduce btn__bg--style1">저장</a>
-        </span>
-        <!-- //modal-popup__btn-wrap -->
+        <!-- //modal-popup -->
       </div>
-      <!-- //modal-popup -->
 
       <a href="#ex1" class="btn__modal--open" style="display: none;">IP 카메라 등록</a> <!-- 퍼블리싱 확인용 버튼 -->
     </div>

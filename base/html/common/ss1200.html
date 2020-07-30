@@ -13,22 +13,24 @@
   </head>
   <body>
     <div class="wrapper">
-      <div id="ex1" class="modal modal-popup">
-        <div class="modal-popup__header">
-          <span class="modal-popup__title">아이디 찾기 결과</span>
+      <div id="ex1" class="modal">
+        <div class="modal-popup">
+          <div class="modal-popup__header">
+            <span class="modal-popup__title">아이디 찾기 결과</span>
+          </div>
+          <!-- //modal-popup__header -->
+          <div class="modal-popup__content">
+            <p class="modal-popup__text">등록된 ID는 [XXXXXX] 입니다.</p>
+          </div>
+          <!-- //modal-popup__content -->
+          <span class="modal-popup__btn modal-popup__btn--size2">
+            <a href="# " rel="modal:close" class="btn__regular btn__bg--style2">확인</a>
+            <a href="# " rel="modal:close" class="btn__regular btn__bg--style1">재조회</a>
+          </span>
+          <!-- //modal-popup__btn-wrap -->
         </div>
-        <!-- //modal-popup__header -->
-        <div class="modal-popup__content">
-          <p class="modal-popup__text">등록된 ID는 [XXXXXX] 입니다.</p>
-        </div>
-        <!-- //modal-popup__content -->
-        <span class="modal-popup__btn modal-popup__btn--size2">
-          <a href="# " rel="modal:close" class="btn__regular btn__bg--style2">확인</a>
-          <a href="# " rel="modal:close" class="btn__regular btn__bg--style1">재조회</a>
-        </span>
-        <!-- //modal-popup__btn-wrap -->
+        <!-- //modal-popup -->
       </div>
-      <!-- //modal-popup -->
 
       <a href="#ex1" class="btn__modal--open" style="display: none;">비밀번호 찾기</a> <!-- 퍼블리싱 확인용 버튼 -->
     </div>
