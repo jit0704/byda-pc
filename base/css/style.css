@@ -1005,6 +1005,38 @@ table {
   width: 49%;
 }
 
+.list-table__bodyscroll {
+  position: relative;
+  height: 100%;
+  padding-top: 52px;
+}
+
+.list-table__bodyscroll .list-table__inner {
+  height: 100%;
+  overflow-y: auto;
+  border-radius: 0 0 8px 8px;
+}
+
+.list-table__bodyscroll .list-table__headerbg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 52px;
+  background: #17274a;
+}
+
+.list-table__bodyscroll .fixed-th {
+  position: absolute;
+  top: 12px;
+  text-align: center;
+}
+
+.list-table__bodyscroll thead th {
+  height: 0 !important;
+  padding: 0 !important;
+}
+
 .list-table__paging {
   margin: 30px 0;
   text-align: center;
@@ -1083,6 +1115,47 @@ table {
   width: 100%;
 }
 
+.modal-popup__table table .select-box__time {
+  width: 70px;
+}
+
+.error {
+  position: relative;
+  height: inherit;
+  background: #141724;
+}
+
+.error dl {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.error dl dt {
+  font-size: 32px;
+  color: #fff;
+}
+
+.error dl dt:before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 80px;
+  background: url(/base/images/icon_error.png) no-repeat 0 0;
+}
+
+.error dl dd {
+  margin-top: 40px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #fff;
+}
+
 .login-wrap {
   position: relative;
   height: inherit;
@@ -1105,7 +1178,8 @@ table {
 
 .monitering-map {
   position: relative;
-  height: 360px;
+  height: 0;
+  padding-top: 29%;
   border-radius: 8px;
 }
 
@@ -1246,22 +1320,23 @@ table {
   margin-top: 30px;
 }
 
-.monitering-content .monitering-content__left {
-  -ms-flex-preferred-size: auto;
-      flex-basis: auto;
+.monitering-content .monitering-item__chart-wrap {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding-right: 30px;
+}
+
+.monitering-content .monitering-item__listable-wrap {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
 
-.monitering-content .monitering-content__right {
-  -ms-flex-preferred-size: 1020px;
-      flex-basis: 1020px;
+.monitering-content .monitering-content__ipcamera-wrap {
+  -ms-flex-preferred-size: 1140px;
+      flex-basis: 1140px;
   padding-left: 30px;
-}
-
-.monitering-item + .monitering-item {
-  margin-top: 20px;
 }
 
 .monitering-item .monitering-item__title {
@@ -1291,7 +1366,6 @@ table {
 }
 
 .monitering-item .monitering-item__content {
-  min-height: 220px;
   background: #212637;
   border-radius: 0 0 8px 8px;
 }
@@ -1303,13 +1377,20 @@ table {
 .monitering-item .monitering-item__content .list-table th {
   height: 52px;
   font-size: 15px;
-  background: #4d85ff;
+  background: #17274a;
   border-radius: 0;
+  text-align: left;
 }
 
 .monitering-item .monitering-item__content .list-table td {
   height: 52px;
   font-size: 13px;
+  background: #5e6fa9;
+}
+
+.monitering-item .monitering-item__content .list-table tbody tr:last-child td:first-child,
+.monitering-item .monitering-item__content .list-table tbody tr:last-child td:last-child {
+  border-radius: 0;
 }
 
 .monitering-content__ipcamera {
@@ -1324,14 +1405,10 @@ table {
 }
 
 .monitering-content__ipcamera .monitering-item {
-  width: 310px;
+  width: 350px;
   margin-top: 0;
 }
 
 .monitering-content__ipcamera .monitering-item:nth-child(4), .monitering-content__ipcamera .monitering-item:nth-child(5), .monitering-content__ipcamera .monitering-item:nth-child(6) {
   margin-top: 20px;
-}
-
-.monitering-content__ipcamera .monitering-item .monitering-item__ipcamera {
-  height: 220px;
 }

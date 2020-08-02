@@ -44,6 +44,16 @@ function cmmnui () {
     dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'], //달력의 요일 부분 텍스트
     dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'] //달력의 요일 부분 Tooltip 텍스트
   });
+
+  // 모니터링 chart, 검지로그 컨텐츠 높이 체크 - 200802 추가
+  $(window).resize(function(){
+    var $defaultHeight = $('.monitering-content__ipcamera').height();
+    $('.monitering-item__content').each(function(){
+      if ( $(this).closest('.monitering-content__ipcamera').length === 0 ) {
+        $(this).css('height', $defaultHeight - 35);
+      }
+    });
+  }).resize();
 }
 
 // 로그인 폼 영역 포커스
