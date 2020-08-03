@@ -27,10 +27,12 @@ function cmmnui () {
     $(document).on('mouseenter', $gnbSelector, function () {
       $gnb.addClass('active');
       $gnbItem.stop().slideDown(280);
+      $('.ui-datepicker').addClass('zindex0'); //200803 추가
     });
     $(document).on('mouseleave', $gnbSelector, function () {
       $gnb.removeClass('active');
       $gnbItem.stop().slideUp(280);
+      $('.ui-datepicker').removeClass('zindex0'); //200803 추가
     });
   }, 100);
 

@@ -28,36 +28,41 @@
                   <col />
                   <col style="width:280px;" />
                 </colgroup>
+                <!-- 200803 수정 -->
                 <tbody>
                   <tr>
                     <th>Camera ID</th>
                     <td><input type="text" class="input__style1"></td>
-                    <th>IP ADDR</th>
-                    <td><input type="text" class="input__style1"></td>
-                  </tr>
-                  <tr>
                     <th>연동 RADAR ID</th>
                     <td>
-                      <select class="select-box select-box__custom">
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
+                      <select class="select-box"> <!-- 200803 select-box__custom클래스 삭제 -->
+                        <option>선택</option>
                       </select>
                     </td>
+                  </tr>
+                  <tr>
+                    <th>IP ADDR</th>
+                    <td><input type="text" class="input__style1"></td>
                     <th>PORT</th>
                     <td><input type="text" class="input__style1"></td>
                   </tr>
                   <tr>
+                    <th>MAC ADDR</th>
+                    <td><input type="text" class="input__style1" value="선택입력"></td>
                     <th>카메라 방향</th>
-                    <td colspan="3">
-                      <select class="select-box select-box__custom" style="width:280px;">
-                        <option></option>
-                        <option></option>
-                        <option></option>
+                    <td>
+                      <select class="select-box"> <!-- 200803 select-box__custom클래스 삭제 -->
                         <option></option>
                       </select>
                     </td>
+                  </tr>
+                  <tr>
+                    <th>Streaming addr</th>
+                    <td colspan="3"><input type="text" class="input__style1" value="선택입력"></td>
+                  </tr>
+                  <tr>
+                    <th>설명</th>
+                    <td colspan="3"><textarea class="textarea"></textarea></td>
                   </tr>
                 </tbody>
               </table>

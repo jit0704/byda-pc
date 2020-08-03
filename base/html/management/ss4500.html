@@ -28,48 +28,53 @@
                   <col />
                   <col style="width:280px;" />
                 </colgroup>
+                <!-- 200803 수정 -->
                 <tbody>
                   <tr>
                     <th>Camera ID</th>
-                    <td><input type="text" class="input__style1"></td>
-                    <th>IP ADDR</th>
-                    <td><input type="text" class="input__style1"></td>
-                  </tr>
-                  <tr>
+                    <td><input type="text" class="input__style1" value="cameraID" readonly></td>
                     <th>연동 RADAR ID</th>
                     <td>
-                      <select class="select-box select-box__custom">
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
+                      <select class="select-box"> <!-- 200803 select-box__custom클래스 삭제 -->
+                        <option>선택</option>
                       </select>
                     </td>
+                  </tr>
+                  <tr>
+                    <th>IP ADDR</th>
+                    <td><input type="text" class="input__style1"></td>
                     <th>PORT</th>
                     <td><input type="text" class="input__style1"></td>
                   </tr>
                   <tr>
+                    <th>MAC ADDR</th>
+                    <td><input type="text" class="input__style1" value="선택입력"></td>
                     <th>카메라 방향</th>
                     <td colspan="3">
-                      <select class="select-box select-box__custom" style="width:280px;">
-                        <option></option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
+                      <select class="select-box"> <!-- 200803 select-box__custom클래스 삭제 -->
+                        <option>동</option>
                       </select>
                     </td>
                   </tr>
                   <tr>
+                    <th>Streaming addr</th>
+                    <td colspan="3"><input type="text" class="input__style1" value="선택입력"></td>
+                  </tr>
+                  <tr>
+                    <th>설명</th>
+                    <td colspan="3"><textarea class="textarea"></textarea></td>
+                  </tr>
+                  <tr>
                     <th>등록자 ID</th>
-                    <td><input type="text" class="input__style1" value="홍길동" disabled></td>
+                    <td><input type="text" class="input__style1" value="admin" readonly></td>
                     <th>수정자 ID</th>
-                    <td><input type="text" class="input__style1" value="홍길동" disabled></td>
+                    <td><input type="text" class="input__style1" value="admin" readonly></td>
                   </tr>
                   <tr>
                     <th>등록 일시</th>
-                    <td><input type="text" class="input__style1" value="YYYY-MM-DD HH24:MI:SS" disabled></td>
+                    <td><input type="text" class="input__style1" value="YYYY-MM-DD HH24:MI:SS" readonly></td>
                     <th>수정 일시</th>
-                    <td><input type="text" class="input__style1" value="YYYY-MM-DD HH24:MI:SS" disabled></td>
+                    <td><input type="text" class="input__style1" value="YYYY-MM-DD HH24:MI:SS" readonly></td>
                   </tr>
                 </tbody>
               </table>

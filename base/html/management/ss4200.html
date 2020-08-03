@@ -28,11 +28,12 @@
                   <col />
                   <col style="width:280px;" />
                 </colgroup>
+                <!-- 200803 수정 -->
                 <tbody>
                   <tr>
                     <th>RADAR ID</th>
-                    <td><input type="text" class="input__style1"></td>
-                    <th>MAC Address</th>
+                    <td><input type="text" class="input__style1" value="radarID" readonly></td>
+                    <th>MAC ADDR</th>
                     <td><input type="text" class="input__style1" value="READONLY" disabled></td>
                   </tr>
                   <tr>
@@ -40,9 +41,6 @@
                     <td><input type="text" class="input__style1"></td>
                     <th>PORT</th>
                     <td><input type="text" class="input__style1"></td>
-                  </tr>
-                  <tr>
-                    <td colspan="4" class="txt-yellow">* RADAR 정보 변경은 로컬제어기에서 작업하시기 바랍니다.</td>
                   </tr>
                   <tr>
                     <th>위도</th>
@@ -55,7 +53,7 @@
                     <td><input type="text" class="input__style1"></td>
                     <th>레이다 방향</th>
                     <td>
-                      <select class="select-box select-box__custom">
+                      <select class="select-box"> <!-- 200803 select-box__custom클래스 삭제 -->
                         <option>동</option>
                         <option>서</option>
                         <option>남</option>
@@ -66,34 +64,47 @@
                   <tr>
                     <th>MODE</th>
                     <td>
-                      <select class="select-box select-box__custom" disabled>
-                        <option>READONLY</option>
+                      <select class="select-box"> <!-- 200803 select-box__custom클래스 삭제 -->
+                        <option>선택입력</option>
                       </select>
                     </td>
                     <th>프로토콜</th>
-                    <td><input type="text" value="READONLY" class="input__style1" disabled></td>
+                    <td><input type="text" value="선택입력" class="input__style1"></td>
+                  </tr>
+                  <tr>
+                    <th>프로그램 버전</th>
+                    <td><input type="text" value="선택입력" class="input__style1"></td>
+                    <th>장비기능 버전</th>
+                    <td><input type="text" value="선택입력" class="input__style1"></td>
                   </tr>
                   <tr>
                     <th>설치일시</th>
-                    <td><input type="text" class="input__style1"></td>
-                    <th>상태</th>
-                    <td>
-                      <select class="select-box select-box__custom" disabled>
-                        <option>READONLY</option>
+                    <td colspan="3">
+                      <input type="text" class="input__style1 input-calendar">
+                      <select class="select-box select-box__time"> <!-- 200803 select-box__custom클래스 삭제 -->
+                        <option>00</option>
+                        <option>00</option>
+                      </select>
+                      <select class="select-box select-box__time"> <!-- 200803 select-box__custom클래스 삭제 -->
+                        <option>00</option>
+                        <option>00</option>
                       </select>
                     </td>
                   </tr>
                   <tr>
                     <th>등록자 ID</th>
-                    <td><input type="text" class="input__style1"></td>
+                    <td><input type="text" class="input__style1" value="admin" readonly></td>
                     <th>수정자 ID</th>
-                    <td><input type="text" class="input__style1"></td>
+                    <td><input type="text" class="input__style1" value="admin" readonly></td>
                   </tr>
                   <tr>
                     <th>등록일시</th>
-                    <td><input type="text" class="input__style1"></td>
+                    <td><input type="text" class="input__style1" value="YYYY-MM-DD HH24:MI:SS" readonly></td>
                     <th>수정일시</th>
-                    <td><input type="text" class="input__style1"></td>
+                    <td><input type="text" class="input__style1" value="YYYY-MM-DD HH24:MI:SS" readonly></td>
+                  </tr>
+                  <tr>
+                    <td colspan="4" class="txt-yellow">* RADAR 정보 변경은 로컬제어기에서 작업하시기 바랍니다.</td>
                   </tr>
                 </tbody>
               </table>
