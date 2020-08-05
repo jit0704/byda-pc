@@ -243,6 +243,10 @@ table {
   font-size: 18px;
 }
 
+.modal .modal-popup__btn.modal-popup__btn--size2 .btn__regular + .btn__regular {
+  margin-left: 15px;
+}
+
 .modal .modal-popup__btn.box-wrap__algin {
   padding: 0 40px;
 }
@@ -252,13 +256,12 @@ table {
 }
 
 .modal .modal-popup__alert {
-  width: 400px;
+  width: 550px;
   min-width: auto;
 }
 
 .modal .modal-popup__alert .modal-popup__content {
   margin-top: 70px;
-  font-size: 16px;
 }
 
 .modal .modal-popup__alert .modal-popup__btn {
@@ -269,11 +272,11 @@ table {
   width: 130px;
   height: 45px;
   line-height: 45px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .modal .modal-popup {
-  min-width: 500px;
+  min-width: 600px;
 }
 
 .modal .modal-popup .modal-popup__content {
@@ -282,6 +285,10 @@ table {
 
 .modal .modal-popup .modal-popup__btn {
   margin-top: 30px;
+}
+
+.modal .modal-popup__text {
+  font-size: 18px;
 }
 
 .modal-popup__header {
@@ -296,7 +303,7 @@ table {
 }
 
 .modal-popup__content {
-  padding: 0 40px;
+  padding: 40px;
   font-weight: 400;
   color: #fff;
   text-align: center;
@@ -307,6 +314,7 @@ table {
   padding: 14px 20px;
   text-align: left;
   font-size: 13px;
+  background: #141724;
 }
 
 .modal-popup__monitering + a.close-modal {
@@ -329,11 +337,11 @@ table {
 }
 
 .modal-popup__monitering--content .modal-popup__monitering--content__left {
-  -ms-flex-preferred-size: 630px;
-      flex-basis: 630px;
+  width: 600px;
 }
 
 .modal-popup__monitering--content .modal-popup__monitering--content__left .modal-popup__monitering--camera {
+  overflow: hidden;
   margin-bottom: 30px;
   border-radius: 8px;
 }
@@ -361,8 +369,6 @@ table {
 }
 
 .modal-popup__monitering--content .modal-popup__monitering--content__right {
-  -ms-flex-preferred-size: auto;
-      flex-basis: auto;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -445,11 +451,15 @@ table {
   background: #141724;
 }
 
+.btn__bg--style3 {
+  background: #484950;
+}
+
 .btn__inquiry {
   display: inline-block;
-  min-width: 140px;
-  height: 45px;
-  line-height: 45px;
+  min-width: 115px;
+  height: 52px;
+  line-height: 52px;
   font-size: 18px;
   color: #fff;
   border-radius: 4px;
@@ -468,15 +478,26 @@ table {
   border: 1px solid #6d707d;
 }
 
+.btn-size2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.btn-size2 .btn__regular:first-child {
+  margin-right: 15px;
+}
+
 .input__style1 {
   width: 100%;
-  height: 45px;
+  height: 52px;
   padding: 0 15px;
-  line-height: 45px;
+  line-height: 52px;
   background: #49516d;
   border-radius: 4px;
   color: #fff;
-  font-size: 15px;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .input__style1:disabled, .input__style1:-moz-read-only {
@@ -489,22 +510,13 @@ table {
   color: #141724;
 }
 
-.input__style2 {
-  height: 56px;
-  line-height: 56px;
-  padding: 0 15px;
-  background: #49516d;
-  color: #fff;
-  font-weight: 400;
-  border-radius: 4px;
-}
-
 .input-calendar {
-  width: 155px;
+  width: 180px;
   margin-right: 5px;
   background-image: url(/base/images/icon_calendar.png);
   background-repeat: no-repeat;
   background-position: 90% 50%;
+  cursor: pointer;
 }
 
 .textarea {
@@ -514,7 +526,7 @@ table {
   background: #49516d;
   border-radius: 4px;
   color: #fff;
-  font-size: 15px;
+  font-size: 20px;
   resize: none;
 }
 
@@ -525,13 +537,13 @@ table {
 
 .select-box {
   position: relative;
-  height: 45px;
-  line-height: 45px;
+  height: 52px;
+  line-height: 52px;
   padding: 0 35px 0 15px;
   border-radius: 4px;
   color: #fff;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 20px;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -578,6 +590,7 @@ table {
   background: #49516d;
   border-radius: 4px;
   vertical-align: middle;
+  cursor: pointer;
 }
 
 .check-box input:checked + label {
@@ -733,6 +746,10 @@ table {
   margin: 0 auto;
 }
 
+.modal-popup__pwchange .modal-popup__pwchange--text {
+  font-size: 20px;
+}
+
 .modal-popup__pwchange--form {
   margin-top: 40px;
 }
@@ -745,10 +762,11 @@ table {
 
 .modal-popup__pwchange--form dt {
   float: left;
-  width: 31%;
+  width: 35%;
   line-height: 45px;
   text-align: left;
   font-weight: 800;
+  font-size: 20px;
 }
 
 .modal-popup__pwchange--form dt:nth-child(1) {
@@ -910,21 +928,24 @@ table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .form-group__inquiry--bind em {
   display: inline-block;
-  margin-right: 20px;
+  margin-right: 15px;
   font-size: 20px;
   color: #fff;
 }
 
 .form-group__inquiry--bind + .form-group__inquiry--bind {
-  margin-left: 40px;
+  margin-left: 35px;
 }
 
 .form-group__inquiry--bind + .btn__inquiry {
-  margin-left: 40px;
+  margin-left: 20px;
 }
 
 .form-bind {
@@ -943,6 +964,10 @@ table {
   margin: 0 10px;
   font-size: 12px;
   color: #888b95;
+}
+
+.list-table__group {
+  padding-bottom: 30px;
 }
 
 .list-table__title {
@@ -964,6 +989,11 @@ table {
   margin: -4px 8px 0 0;
   background: #4d85ff;
   vertical-align: middle;
+}
+
+.list-table .no-data {
+  padding: 100px 0;
+  font-size: 18px;
 }
 
 .list-table th,
@@ -1034,7 +1064,7 @@ table {
   top: 0;
   width: 100%;
   height: 52px;
-  background: #17274a;
+  background: #141724;
 }
 
 .list-table__bodyscroll .fixed-th {
@@ -1064,7 +1094,7 @@ table {
   vertical-align: middle;
 }
 
-.list-table__paging a:hover {
+.list-table__paging a:hover, .list-table__paging a.active {
   color: #fff;
 }
 
@@ -1115,6 +1145,7 @@ table {
 
 .modal-popup__table table th {
   padding-right: 20px;
+  font-size: 20px;
 }
 
 .modal-popup__table table th:nth-child(3) {
@@ -1127,7 +1158,7 @@ table {
 }
 
 .modal-popup__table table .select-box__time {
-  width: 70px;
+  width: 78px;
 }
 
 .error {
@@ -1167,6 +1198,12 @@ table {
   color: #fff;
 }
 
+.error dl dd .btn__regular {
+  display: inline-block;
+  width: 30%;
+  margin-top: 40px;
+}
+
 .login-wrap {
   position: relative;
   height: inherit;
@@ -1194,134 +1231,16 @@ table {
   border-radius: 8px;
 }
 
-.monitering-map .monitering__mark {
+.monitering-map > img {
   position: absolute;
-  background: url(/base/images/icon_monitering.png) no-repeat 0 0;
 }
 
-.monitering-map .monitering__mark--car {
-  width: 15px;
-  height: 15px;
-  background-position: 0 -254px;
+.monitering-map a {
+  position: absolute;
 }
 
-.monitering-map .monitering__mark--camera {
-  width: 42px;
-  height: 56px;
-}
-
-.monitering-map .monitering__mark--camera.left.on {
-  background-position: 0 -7px;
-}
-
-.monitering-map .monitering__mark--camera.left.close {
-  background-position: -42px -7px;
-}
-
-.monitering-map .monitering__mark--camera.left.off {
-  height: 63px;
-  background-position: -84px 0;
-}
-
-.monitering-map .monitering__mark--camera.right.on {
-  background-position: -126px -7px;
-}
-
-.monitering-map .monitering__mark--camera.right.close {
-  background-position: -168px -7px;
-}
-
-.monitering-map .monitering__mark--camera.right.off {
-  height: 63px;
-  background-position: -210px 0;
-}
-
-.monitering-map .monitering__mark--camera2 {
-  width: 42px;
-  height: 56px;
-}
-
-.monitering-map .monitering__mark--camera2.left.on {
-  background-position: 0 -70px;
-}
-
-.monitering-map .monitering__mark--camera2.left.close {
-  background-position: -42px -70px;
-}
-
-.monitering-map .monitering__mark--camera2.left.off {
-  height: 63px;
-  background-position: -84px -63px;
-}
-
-.monitering-map .monitering__mark--camera2.right.on {
-  background-position: -126px -70px;
-}
-
-.monitering-map .monitering__mark--camera2.right.close {
-  background-position: -168px -70px;
-}
-
-.monitering-map .monitering__mark--camera2.right.off {
-  height: 63px;
-  background-position: -210px -63px;
-}
-
-.monitering-map .monitering__mark--radar {
-  width: 42px;
-  height: 56px;
-}
-
-.monitering-map .monitering__mark--radar.left.on {
-  background-position: 0 -134px;
-}
-
-.monitering-map .monitering__mark--radar.left.close {
-  background-position: -42px -134px;
-}
-
-.monitering-map .monitering__mark--radar.left.off {
-  height: 64px;
-  background-position: -84px -126px;
-}
-
-.monitering-map .monitering__mark--radar.right.on {
-  background-position: -126px -134px;
-}
-
-.monitering-map .monitering__mark--radar.right.close {
-  background-position: -168px -134px;
-}
-
-.monitering-map .monitering__mark--radar.right.off {
-  height: 63px;
-  background-position: -210px -126px;
-}
-
-.monitering-map .monitering__mark--radar.top.on {
-  background-position: 0 -198px;
-}
-
-.monitering-map .monitering__mark--radar.top.close {
-  background-position: -42px -198px;
-}
-
-.monitering-map .monitering__mark--radar.top.off {
-  height: 64px;
-  background-position: -84px -190px;
-}
-
-.monitering-map .monitering__mark--radar.bottom.on {
-  background-position: -126px -198px;
-}
-
-.monitering-map .monitering__mark--radar.bottom.close {
-  background-position: -168px -198px;
-}
-
-.monitering-map .monitering__mark--radar.bottom.off {
-  height: 63px;
-  background-position: -210px -190px;
+.monitering-map a img {
+  width: 80%;
 }
 
 .monitering-content {
@@ -1338,10 +1257,18 @@ table {
   padding-right: 30px;
 }
 
+.monitering-content .monitering-item__chart-wrap .monitering-item__title {
+  background: #49485f;
+}
+
 .monitering-content .monitering-item__listable-wrap {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+
+.monitering-content .monitering-item__listable-wrap .monitering-item__title {
+  background: #49485f;
 }
 
 .monitering-content .monitering-content__ipcamera-wrap {
@@ -1354,7 +1281,6 @@ table {
   display: block;
   padding: 0 15px;
   line-height: 35px;
-  background: #141724;
   color: #fff;
   font-size: 11px;
   border-radius: 8px 8px 0 0;
@@ -1377,6 +1303,7 @@ table {
 }
 
 .monitering-item .monitering-item__content {
+  overflow: hidden;
   background: #212637;
   border-radius: 0 0 8px 8px;
 }
@@ -1388,7 +1315,7 @@ table {
 .monitering-item .monitering-item__content .list-table th {
   height: 52px;
   font-size: 15px;
-  background: #17274a;
+  background: #141724;
   border-radius: 0;
   text-align: left;
 }
@@ -1396,7 +1323,7 @@ table {
 .monitering-item .monitering-item__content .list-table td {
   height: 52px;
   font-size: 13px;
-  background: #5e6fa9;
+  background: #212637;
 }
 
 .monitering-item .monitering-item__content .list-table tbody tr:last-child td:first-child,
@@ -1418,6 +1345,10 @@ table {
 .monitering-content__ipcamera .monitering-item {
   width: 350px;
   margin-top: 0;
+}
+
+.monitering-content__ipcamera .monitering-item .monitering-item__title {
+  background: #141724;
 }
 
 .monitering-content__ipcamera .monitering-item:nth-child(4), .monitering-content__ipcamera .monitering-item:nth-child(5), .monitering-content__ipcamera .monitering-item:nth-child(6) {
