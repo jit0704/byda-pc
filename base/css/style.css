@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, p, table, th, td, form, fieldset, legend, textarea, input, select, textarea, button, article, aside, dialog, footer, header, section, footer, nav, figure, main {
   margin: 0;
   padding: 0;
@@ -85,6 +84,27 @@ table {
   font-size: 1px;
   line-height: 100px;
   white-space: nowrap;
+}
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: local("NanumGothic"), url(/base/font/nanum-gothic-v17-latin-regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 700;
+  src: local("NanumGothic Bold"), local("NanumGothic-Bold"), url(/base/font/nanum-gothic-v17-latin-700.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 800;
+  src: local("NanumGothic ExtraBold"), local("NanumGothic-ExtraBold"), url(/base/font/nanum-gothic-v17-latin-800.woff2) format("woff2");
 }
 
 .blocker {
@@ -1212,8 +1232,8 @@ table {
 
 .btn-logout {
   display: inline-block;
-  min-width: 100px;
   height: 40px;
+  padding: 0 20px;
   line-height: 40px;
   text-align: center;
   color: #fff;
@@ -1227,7 +1247,7 @@ table {
 .monitering-map {
   position: relative;
   height: 0;
-  padding-top: 29%;
+  padding-top: 33%;
   border-radius: 8px;
 }
 
@@ -1262,9 +1282,7 @@ table {
 }
 
 .monitering-content .monitering-item__listable-wrap {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  width: 800px;
 }
 
 .monitering-content .monitering-item__listable-wrap .monitering-item__title {
@@ -1335,22 +1353,26 @@ table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
 .monitering-content__ipcamera .monitering-item {
-  width: 350px;
+  width: 230px;
   margin-top: 0;
+}
+
+.monitering-content__ipcamera .monitering-item + .monitering-item {
+  margin-left: 15px;
 }
 
 .monitering-content__ipcamera .monitering-item .monitering-item__title {
   background: #141724;
 }
 
-.monitering-content__ipcamera .monitering-item:nth-child(4), .monitering-content__ipcamera .monitering-item:nth-child(5), .monitering-content__ipcamera .monitering-item:nth-child(6) {
-  margin-top: 20px;
+.monitering-content__ipcamera .monitering-item__ipcamera img {
+  width: 100%;
 }
