@@ -1058,7 +1058,6 @@ table {
   height: 61px;
   line-height: 20px;
   background: #212637;
-  font-size: 15px;
 }
 
 .list-table__half > .box-wrap__algin--left,
@@ -1074,7 +1073,6 @@ table {
 
 .list-table__bodyscroll .list-table__inner {
   height: 100%;
-  overflow-y: auto;
   border-radius: 0 0 8px 8px;
 }
 
@@ -1230,10 +1228,16 @@ table {
   background: #141724;
 }
 
+.user-name {
+  display: inline-block;
+  margin-right: 5px;
+  color: #fff;
+}
+
 .btn-logout {
   display: inline-block;
   height: 40px;
-  padding: 0 20px;
+  padding: 0 25px;
   line-height: 40px;
   text-align: center;
   color: #fff;
@@ -1247,7 +1251,7 @@ table {
 .monitering-map {
   position: relative;
   height: 0;
-  padding-top: 33%;
+  padding-top: 29.5%;
   border-radius: 8px;
 }
 
@@ -1282,7 +1286,7 @@ table {
 }
 
 .monitering-content .monitering-item__listable-wrap {
-  width: 800px;
+  width: 745px;
 }
 
 .monitering-content .monitering-item__listable-wrap .monitering-item__title {
@@ -1339,7 +1343,7 @@ table {
 }
 
 .monitering-item .monitering-item__content .list-table td {
-  height: 52px;
+  height: 54px;
   font-size: 13px;
   background: #212637;
 }
@@ -1361,7 +1365,7 @@ table {
 }
 
 .monitering-content__ipcamera .monitering-item {
-  width: 230px;
+  width: 304px;
   margin-top: 0;
 }
 
