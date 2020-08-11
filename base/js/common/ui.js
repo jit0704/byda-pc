@@ -48,7 +48,7 @@ function cmmnui () {
   });
 
   // 모니터링 chart, 검지로그 컨텐츠 높이 체크 - 200802 추가
-  // 200810 삭제
+  // 200811 삭제
   // setTimeout(function(){
   //   $(window).resize(function(){
   //     var $defaultHeight = $('.monitering-content__ipcamera').height();
