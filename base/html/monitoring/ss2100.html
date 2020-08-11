@@ -29,12 +29,15 @@
             <!-- 200805 아이콘 이미지 요소로 변경 -->
             <img src="/base/images/car.png" alt="차량표시" style="left:750px;top:230px;">
 
-            <a href="#" style="left:10px;top:10px;"><img src="/base/images/camera_left_on.png" alt="카메라(좌측방향on)"></a>
-            <a href="#" style="left:62px;top:10px;"><img src="/base/images/camera_left_close.png" alt="카메라(좌측방향close)"></a>
-            <a href="#" style="left:114px;top:3px;"><img src="/base/images/camera_left_off.png" alt="카메라(좌측방향off)"></a>
-            <a href="#" style="left:166px;top:10px;"><img src="/base/images/camera_right_on.png" alt="카메라(우측방향on)"></a>
-            <a href="#" style="left:218px;top:10px;"><img src="/base/images/camera_right_close.png" alt="카메라(우측방향close)"></a>
-            <a href="#" style="left:270px;top:3px;"><img src="/base/images/camera_right_off.png" alt="카메라(우측방향off)"></a>
+            <!-- 200811 IP카메라 호출용 A요소에 #링크값 추가 (#링크 네이밍은 개발시 바꿔도 상관없습니다. #링크값과 동일한 하단 IP카메라 ID값을 가진 팝업을 호출합니다.)
+                        IP카메라에 monitering-camera 클래스명 추가
+            -->
+            <a href="#popcall_1" class="monitering-camera" style="left:10px;top:10px;"><img src="/base/images/camera_left_on.png" alt="카메라(좌측방향on)"></a>
+            <a href="#popcall_2" class="monitering-camera" style="left:62px;top:10px;"><img src="/base/images/camera_left_close.png" alt="카메라(좌측방향close)"></a>
+            <a href="#" class="monitering-camera" style="left:114px;top:3px;"><img src="/base/images/camera_left_off.png" alt="카메라(좌측방향off)"></a>
+            <a href="#" class="monitering-camera" style="left:166px;top:10px;"><img src="/base/images/camera_right_on.png" alt="카메라(우측방향on)"></a>
+            <a href="#" class="monitering-camera" style="left:218px;top:10px;"><img src="/base/images/camera_right_close.png" alt="카메라(우측방향close)"></a>
+            <a href="#" class="monitering-camera" style="left:270px;top:3px;"><img src="/base/images/camera_right_off.png" alt="카메라(우측방향off)"></a>
 
             <a href="#" style="left:10px;top:79px;"><img src="/base/images/camera2_left_on.png" alt="카메라(좌측방향on)"></a>
             <a href="#" style="left:62px;top:79px;"><img src="/base/images/camera2_left_close.png" alt="카메라(좌측방향close"></a>
@@ -166,6 +169,14 @@
                           <td>160km/h</td>
                           <td>-</td>
                         </tr>
+                        <tr>
+                          <td>RADAR ID</td>
+                          <td>05:22:01.123</td>
+                          <td>1</td>
+                          <td>track 01</td>
+                          <td>160km/h</td>
+                          <td>-</td>
+                        </tr>
                       </tbody>
                     </table>
                   </div>
@@ -176,120 +187,175 @@
             </div>
             <!-- //monitering-item -->
 
-            <div class="monitering-content__ipcamera-wrap">
-              <div class="monitering-content__ipcamera">
-                <div class="monitering-item">
-                  <div class="monitering-item__title box-wrap__algin">
-                    <span class="box-wrap__algin--left">RADAR ID1</span>
-                    <span class="box-wrap__algin--right">
-                      <a href="#" class="btn-monitering__extend"><em class="hidden">카메라 확대 보기</em></a>
-                      <a href="#" class="btn-monitering__close"><em class="hidden">카메라 닫기</em></a>
-                    </span>
-                  </div>
-                  <div class="monitering-item__content">
-                    <div class="monitering-item__ipcamera">
-                      <img src="/base/images/@1080x1920.png" alt="IP카메라 더미이미지">
-                    </div>
-                  </div>
-                  <!-- //monitering-item__content -->
-                </div>
-                <!-- //monitering-item -->
+            <!-- 200811 기존 IP카메라 영역 삭제 -->
+            <!-- <div class="monitering-content__ipcamera-wrap">
+            </div> -->
 
-                <div class="monitering-item">
-                  <div class="monitering-item__title box-wrap__algin">
-                    <span class="box-wrap__algin--left">RADAR ID2</span>
-                    <span class="box-wrap__algin--right">
-                      <a href="#" class="btn-monitering__extend"><em class="hidden">카메라 확대 보기</em></a>
-                      <a href="#" class="btn-monitering__close"><em class="hidden">카메라 닫기</em></a>
-                    </span>
-                  </div>
-                  <div class="monitering-item__content">
-                    <div class="monitering-item__ipcamera">
-                      <img src="/base/images/@1080x1920.png" alt="IP카메라 더미이미지">
-                    </div>
-                  </div>
-                  <!-- //monitering-item__content -->
-                </div>
-                <!-- //monitering-item -->
-
-                <div class="monitering-item">
-                  <div class="monitering-item__title box-wrap__algin">
-                    <span class="box-wrap__algin--left">RADAR ID3</span>
-                    <span class="box-wrap__algin--right">
-                      <a href="#" class="btn-monitering__extend"><em class="hidden">카메라 확대 보기</em></a>
-                      <a href="#" class="btn-monitering__close"><em class="hidden">카메라 닫기</em></a>
-                    </span>
-                  </div>
-                  <div class="monitering-item__content">
-                    <div class="monitering-item__ipcamera">
-                      <img src="/base/images/@1080x1920.png" alt="IP카메라 더미이미지">
-                    </div>
-                  </div>
-                  <!-- //monitering-item__content -->
-                </div>
-                <!-- //monitering-item -->
-
-                <div class="monitering-item">
-                  <div class="monitering-item__title box-wrap__algin">
-                    <span class="box-wrap__algin--left">RADAR ID4</span>
-                    <span class="box-wrap__algin--right">
-                      <a href="#" class="btn-monitering__extend"><em class="hidden">카메라 확대 보기</em></a>
-                      <a href="#" class="btn-monitering__close"><em class="hidden">카메라 닫기</em></a>
-                    </span>
-                  </div>
-                  <div class="monitering-item__content">
-                    <div class="monitering-item__ipcamera">
-                      <img src="/base/images/@1080x1920.png" alt="IP카메라 더미이미지">
-                    </div>
-                  </div>
-                  <!-- //monitering-item__content -->
-                </div>
-                <!-- //monitering-item -->
-
-                <div class="monitering-item">
-                  <div class="monitering-item__title box-wrap__algin">
-                    <span class="box-wrap__algin--left">RADAR ID5</span>
-                    <span class="box-wrap__algin--right">
-                      <a href="#" class="btn-monitering__extend"><em class="hidden">카메라 확대 보기</em></a>
-                      <a href="#" class="btn-monitering__close"><em class="hidden">카메라 닫기</em></a>
-                    </span>
-                  </div>
-                  <div class="monitering-item__content">
-                    <div class="monitering-item__ipcamera">
-                      <img src="/base/images/@1080x1920.png" alt="IP카메라 더미이미지">
-                    </div>
-                  </div>
-                  <!-- //monitering-item__content -->
-                </div>
-                <!-- //monitering-item -->
-
-                <div class="monitering-item">
-                  <div class="monitering-item__title box-wrap__algin">
-                    <span class="box-wrap__algin--left">RADAR ID6</span>
-                    <span class="box-wrap__algin--right">
-                      <a href="#" class="btn-monitering__extend"><em class="hidden">카메라 확대 보기</em></a>
-                      <a href="#" class="btn-monitering__close"><em class="hidden">카메라 닫기</em></a>
-                    </span>
-                  </div>
-                  <div class="monitering-item__content">
-                    <div class="monitering-item__ipcamera">
-                      <img src="/base/images/@1080x1920.png" alt="IP카메라 더미이미지">
-                    </div>
-                  </div>
-                  <!-- //monitering-item__content -->
-                </div>
-                <!-- //monitering-item -->
-              </div>
-              <!-- //monitering-content__ipcamera -->
-            </div>
-            <!-- //monitering-content__ipcamera-wrap -->
           </div>
           <!-- //monitering-content -->
+
+          <!-- 200811 IP카메라 위치 이동 / ID값은 카메라 아이콘 href값과 동일해야 호출됩니다. -->
+          <div id="popcall_1" class="monitering-content__ipcamera w1080">
+            <div class="monitering-item">
+              <div class="monitering-item__title box-wrap__algin">
+                <span class="box-wrap__algin--left">RADAR ID1</span>
+                <span class="box-wrap__algin--right">
+                  <!-- 카메라 확대 보기 버튼 클릭시 모니터링 팝업 호출 -->
+                  <a href="#ex1" class="btn-monitering__extend btn__modal--open"><em class="hidden">카메라 확대 보기</em></a>
+                  <a href="#" class="btn-monitering__close"><em class="hidden">카메라 닫기</em></a>
+                </span>
+              </div>
+              <div class="monitering-item__content">
+                <div class="monitering-item__ipcamera">
+                  <img src="/base/images/@1080x1920.png" alt="IP카메라 더미이미지" class="monitering-item__el">
+                </div>
+              </div>
+              <!-- //monitering-item__content -->
+            </div>
+            <!-- //monitering-item -->
+          </div>
+          <!-- //monitering-content__ipcamera -->
+          <div id="popcall_2" class="monitering-content__ipcamera w1920">
+            <div class="monitering-item">
+              <div class="monitering-item__title box-wrap__algin">
+                <span class="box-wrap__algin--left">RADAR ID2</span>
+                <span class="box-wrap__algin--right">
+                  <a href="#" class="btn-monitering__extend"><em class="hidden">카메라 확대 보기</em></a>
+                  <a href="#" class="btn-monitering__close"><em class="hidden">카메라 닫기</em></a>
+                </span>
+              </div>
+              <div class="monitering-item__content">
+                <div class="monitering-item__ipcamera">
+                  <img src="/base/images/@1920x1080.png" alt="IP카메라 더미이미지" class="monitering-item__el">
+                </div>
+              </div>
+              <!-- //monitering-item__content -->
+            </div>
+            <!-- //monitering-item -->
+          </div>
+          <!-- //monitering-content__ipcamera -->
+
         </div>
         <!-- //monitering-wrap -->
       </div>
       <!-- //container -->
+
+      <!-- 200811모니터링 확대 모달팝업 추가  -->
+      <div id="ex1" class="modal">
+        <div class="modal-popup modal-popup__monitering">
+          <div class="modal-popup__header">
+            <span class="modal-popup__title">RADAR ID 1</span>
+          </div>
+          <!-- //modal-popup__header -->
+          <div class="modal-popup__content">
+            <div class="modal-popup__monitering--content w1920"> <!-- 200809 w1920 클래스 추가 -->
+              <div class="modal-popup__monitering--content__left">
+                <div class="modal-popup__monitering--camera">
+                  <img src="/base/images/@1920x1080.png" alt="IP카메라 더미이미지" style="width:100%;">
+                </div>
+                <!-- //modal-popup__monitering--camera -->
+                <div class="list-table">
+                  <table class="list-table__bordered">
+                    <colgroup>
+                      <col style="width:20%;" />
+                      <col style="width:20%;" />
+                      <col style="width:20%;" />
+                      <col style="width:20%;" />
+                      <col style="width:20%;" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>1차로</th>
+                        <th>2차로</th>
+                        <th>3차로</th>
+                        <th>4차로</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>평균속도</td>
+                        <td>222</td>
+                        <td>222</td>
+                        <td>222</td>
+                        <td>222</td>
+                      </tr>
+                      <tr>
+                        <td>교통량</td>
+                        <td>222</td>
+                        <td>222</td>
+                        <td>222</td>
+                        <td>222</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- //list-table -->
+              </div>
+              <!-- //modal-popup__monitering--content__left -->
+              <div class="modal-popup__monitering--content__right">
+                <div class="modal-popup__monitering--chart">
+                  차트 영역
+                </div>
+              </div>
+            </div>
+            <!-- //modal-popup__monitering--content -->
+          </div>
+          <!-- //modal-popup__content -->
+        </div>
+        <!-- //modal-popup -->
+      </div>
     </div>
     <!-- //wrapper -->
+
+    <script>
+      // 200811 IP카메라 관련 스크립트 추가
+      $(function(){
+        // IP카메라 호출
+        var $cameraEl = $('.monitering-camera'); // 지도 위 카메라 아이콘
+        var $ipcamera = $('.monitering-content__ipcamera'); // IP카메라 요소
+        $cameraEl.on('click', function(e){
+          var $this = $(this);
+          var $hash = $this.attr('href');
+          var $iconW = $this.children().width() * 1.6;
+          var $iconH = $this.children().height() * 1.6;
+          var x = parseInt($this.css('left')) + $iconW + 'px';
+          var y = parseInt($this.css('top')) + $iconH + 'px';
+
+          $($hash).css({
+            'left': x,
+            'top': y
+          }).fadeIn(250);
+          
+          return false;
+        });
+
+        // IP카메라 닫기
+        $('.btn-monitering__close').on('click', function(){
+          $(this).closest($ipcamera).fadeOut(250);
+          return false;
+        });
+
+        // IP카메라 draggable
+        $ipcamera.draggable({
+          containment: '.container', 
+          zIndex: 10,
+          drag: function(){
+            $ipcamera.css('z-index', '0');
+            $(this).css('z-index', '10');
+          },
+          stop: function(){
+            $ipcamera.css('z-index', '0');
+            $(this).css('z-index', '10');
+          }
+        });
+
+        // IP카메라 Resizable
+        $ipcamera.resizable();
+
+        // 모니터링 모달 팝업 draggable
+        $('.modal').draggable();
+      });
+    </script>
   </body>
 </html>

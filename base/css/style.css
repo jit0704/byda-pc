@@ -329,6 +329,10 @@ table {
   text-align: center;
 }
 
+.modal-popup__monitering {
+  cursor: move;
+}
+
 .modal-popup__monitering .modal-popup__header {
   margin-bottom: 0;
   padding: 14px 20px;
@@ -396,7 +400,7 @@ table {
 }
 
 .modal-popup__monitering--content.w1080 {
-  width: 1500px;
+  width: 1750px;
 }
 
 .modal-popup__monitering--content.w1080 .modal-popup__monitering--content__left {
@@ -432,6 +436,7 @@ table {
 }
 
 .modal-popup__monitering--content .modal-popup__monitering--content__right .modal-popup__monitering--chart {
+  padding-top: 30px;
   text-align: left;
 }
 
@@ -1281,13 +1286,14 @@ table {
 }
 
 .monitering-wrap {
+  position: relative;
   padding: 30px 40px;
 }
 
 .monitering-map {
   position: relative;
   height: 0;
-  padding-top: 29.5%;
+  padding-top: 31%;
   border-radius: 8px;
 }
 
@@ -1311,9 +1317,9 @@ table {
 }
 
 .monitering-content .monitering-item__chart-wrap {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
   padding-right: 30px;
 }
 
@@ -1322,17 +1328,13 @@ table {
 }
 
 .monitering-content .monitering-item__listable-wrap {
-  width: 745px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .monitering-content .monitering-item__listable-wrap .monitering-item__title {
   background: #49485f;
-}
-
-.monitering-content .monitering-content__ipcamera-wrap {
-  -ms-flex-preferred-size: 1140px;
-      flex-basis: 1140px;
-  padding-left: 30px;
 }
 
 .monitering-item .monitering-item__title {
@@ -1367,7 +1369,12 @@ table {
 }
 
 .monitering-item .monitering-item__content .monitering-item__chart {
+  height: 592px;
   padding: 10px 30px;
+}
+
+.monitering-item .monitering-item__content .list-table__inner {
+  height: 540px;
 }
 
 .monitering-item .monitering-item__content .list-table th {
@@ -1390,19 +1397,25 @@ table {
 }
 
 .monitering-content__ipcamera {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  position: absolute;
+  overflow: hidden;
+  display: none;
+  cursor: move;
 }
 
-.monitering-content__ipcamera .monitering-item {
-  width: 304px;
-  margin-top: 0;
+.monitering-content__ipcamera.w1080 {
+  width: 300px;
+}
+
+.monitering-content__ipcamera.w1920 {
+  width: 600px;
+}
+
+.monitering-content__ipcamera .monitering-item,
+.monitering-content__ipcamera .monitering-item__content,
+.monitering-content__ipcamera .monitering-item__ipcamera,
+.monitering-content__ipcamera .monitering-item__el {
+  height: inherit;
 }
 
 .monitering-content__ipcamera .monitering-item + .monitering-item {

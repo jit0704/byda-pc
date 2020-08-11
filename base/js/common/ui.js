@@ -48,16 +48,17 @@ function cmmnui () {
   });
 
   // 모니터링 chart, 검지로그 컨텐츠 높이 체크 - 200802 추가
-  setTimeout(function(){
-    $(window).resize(function(){
-      var $defaultHeight = $('.monitering-content__ipcamera').height();
-      $('.monitering-item__content').each(function(){
-        if ( $(this).closest('.monitering-content__ipcamera').length === 0 ) {
-          $(this).css('height', $defaultHeight - 35);
-        }
-      });
-    }).resize();
-  }, 50);
+  // 200810 삭제
+  // setTimeout(function(){
+  //   $(window).resize(function(){
+  //     var $defaultHeight = $('.monitering-content__ipcamera').height();
+  //     $('.monitering-item__content').each(function(){
+  //       if ( $(this).closest('.monitering-content__ipcamera').length === 0 ) {
+  //         $(this).css('height', $defaultHeight - 35);
+  //       }
+  //     });
+  //   }).resize();
+  // }, 50);
 }
 
 // 로그인 폼 영역 포커스
