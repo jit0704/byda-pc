@@ -331,6 +331,16 @@ table {
 
 .modal-popup__monitering {
   cursor: move;
+  height: inherit;
+}
+
+.modal-popup__monitering .modal-popup__content {
+  width: inherit;
+  height: inherit;
+}
+
+.modal-popup__monitering .modal-popup__monitering--content {
+  height: inherit;
 }
 
 .modal-popup__monitering .modal-popup__header {
@@ -382,11 +392,11 @@ table {
 }
 
 .modal-popup__monitering--content.w1920 {
-  width: 1800px;
+  width: 2000px;
 }
 
 .modal-popup__monitering--content.w1920 .modal-popup__monitering--content__left {
-  width: 800px;
+  width: 1000px;
 }
 
 .modal-popup__monitering--content.w1920 .modal-popup__monitering--content__left .modal-popup__monitering--camera {
@@ -411,6 +421,10 @@ table {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+
+.modal-popup__monitering--content .modal-popup__monitering--content__left .monitering-camera__el {
+  width: 100%;
 }
 
 .modal-popup__monitering--content .modal-popup__monitering--content__left .modal-popup__monitering--camera {
@@ -1404,11 +1418,11 @@ table {
 }
 
 .monitering-content__ipcamera.w1080 {
-  width: 300px;
+  width: 200px;
 }
 
 .monitering-content__ipcamera.w1920 {
-  width: 600px;
+  width: 400px;
 }
 
 .monitering-content__ipcamera .monitering-item,

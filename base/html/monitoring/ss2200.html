@@ -23,7 +23,8 @@
             <div class="modal-popup__monitering--content w1920"> <!-- 200809 w1920 클래스 추가 -->
               <div class="modal-popup__monitering--content__left">
                 <div class="modal-popup__monitering--camera">
-                  <img src="/base/images/@1920x1080.png" alt="IP카메라 더미이미지" style="width:100%;">
+                  <!-- 200812 이곳에 카메라영상이 삽입되면 해당 요소에 monitering-camera__el 클래스 추가해야합니다. -->
+                  <img src="/base/images/@1920x1080.png" alt="IP카메라 더미이미지" class="monitering-camera__el">
                 </div>
                 <!-- //modal-popup__monitering--camera -->
                 <div class="list-table">
@@ -87,8 +88,28 @@
       $(function () {
         $('.btn__modal--open').trigger('click');
 
-        // 모니터링 팝업 draggable & Resizable
-        $('.modal').draggable();
+        // 모니터링 확대 팝업 draggable & Resizable 200812 수정
+        var $modal = $('.modal');
+        var $modalMoniteringContent = $('.modal-popup__monitering--content');
+        var $modalMoniteringConLeft = $('.modal-popup__monitering--content__left');
+        $modal.draggable();
+        $modal.resizable({
+          resize: function(e, ui){
+            var $this = $(this);
+            var conH = $this.find($modalMoniteringContent).height() - 50;
+            if ($this.find($modalMoniteringContent).is('.w1920')) {
+              $this.find($modalMoniteringContent).css({
+                'width': 'inherit',
+                'height': 'inherit'
+              });
+              $this.find($modalMoniteringConLeft).css({
+                'width': '51%',
+                'height': conH,
+                'overflow-y': 'auto'
+              });
+            }
+          }
+        });
       });
     </script>
   </body>

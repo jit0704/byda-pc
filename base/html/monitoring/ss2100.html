@@ -207,6 +207,7 @@
               </div>
               <div class="monitering-item__content">
                 <div class="monitering-item__ipcamera">
+                  <!-- 200812 이곳에 카메라영상이 삽입되면 해당 요소에 monitering-item__el 클래스 추가해야합니다. -->
                   <img src="/base/images/@1080x1920.png" alt="IP카메라 더미이미지" class="monitering-item__el">
                 </div>
               </div>
@@ -220,7 +221,7 @@
               <div class="monitering-item__title box-wrap__algin">
                 <span class="box-wrap__algin--left">RADAR ID2</span>
                 <span class="box-wrap__algin--right">
-                  <a href="#" class="btn-monitering__extend"><em class="hidden">카메라 확대 보기</em></a>
+                  <a href="#ex2" class="btn-monitering__extend btn__modal--open"><em class="hidden">카메라 확대 보기</em></a>
                   <a href="#" class="btn-monitering__close"><em class="hidden">카메라 닫기</em></a>
                 </span>
               </div>
@@ -305,6 +306,100 @@
         </div>
         <!-- //modal-popup -->
       </div>
+
+      <!-- 200812모니터링 확대 모달팝업 추가  -->
+      <div id="ex2" class="modal">
+        <div class="modal-popup modal-popup__monitering">
+          <div class="modal-popup__header">
+            <span class="modal-popup__title">RADAR ID 2</span>
+          </div>
+          <!-- //modal-popup__header -->
+          <div class="modal-popup__content">
+            <div class="modal-popup__monitering--content w1080"> <!-- 200809 w1080 클래스 추가 -->
+              <div class="modal-popup__monitering--content__left">
+                <div class="modal-popup__monitering--camera">
+                  <!-- 200812 이곳에 카메라영상이 삽입되면 해당 요소에 monitering-camera__el 클래스 추가해야합니다. -->
+                  <img src="/base/images/@1080x1920.png" alt="IP카메라 더미이미지" class="monitering-camera__el">
+                </div>
+                <!-- //modal-popup__monitering--camera -->
+              </div>
+              <!-- //modal-popup__monitering--content__left -->
+              <div class="modal-popup__monitering--content__right">
+                <!-- 200809 테이블 위치 변경 -->
+                <div class="box-wrap__algin">
+                  <div class="list-table">
+                    <table class="list-table__bordered">
+                      <colgroup>
+                        <col style="width:20%;" />
+                        <col style="width:20%;" />
+                        <col style="width:20%;" />
+                        <col style="width:20%;" />
+                        <col style="width:20%;" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th>평균 속도</th>
+                          <th>1차로</th>
+                          <th>2차로</th>
+                          <th>3차로</th>
+                          <th>4차로</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td>222</td>
+                          <td>222</td>
+                          <td>222</td>
+                          <td>222</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- //list-table -->
+                  <div class="list-table">
+                    <table class="list-table__bordered">
+                      <colgroup>
+                        <col style="width:20%;" />
+                        <col style="width:20%;" />
+                        <col style="width:20%;" />
+                        <col style="width:20%;" />
+                        <col style="width:20%;" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th>교통량</th>
+                          <th>1차로</th>
+                          <th>2차로</th>
+                          <th>3차로</th>
+                          <th>4차로</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td>222</td>
+                          <td>222</td>
+                          <td>222</td>
+                          <td>222</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- //list-table -->
+                </div>
+                <!-- //box-wrap__algin -->
+                <div class="modal-popup__monitering--chart">
+                  차트 영역
+                </div>
+              </div>
+            </div>
+            <!-- //modal-popup__monitering--content -->
+          </div>
+          <!-- //modal-popup__content -->
+        </div>
+        <!-- //modal-popup -->
+      </div>
     </div>
     <!-- //wrapper -->
 
@@ -350,11 +445,46 @@
           }
         });
 
-        // IP카메라 Resizable
-        $ipcamera.resizable();
+        // IP카메라 Resizable 200812 수정
+        $ipcamera.resizable({
+          resize: function(e, ui){
+            var cameraH = ui.size.height;
+            $(this).find('.monitering-item__content').css('height', cameraH - 35); // 35는 ip카메라 타이틀 높이
+          }
+        });
 
-        // 모니터링 모달 팝업 draggable
-        $('.modal').draggable();
+        // 모니터링 확대 팝업 draggable & Resizable 200812 수정
+        var $modal = $('.modal');
+        var $modalMoniteringContent = $('.modal-popup__monitering--content');
+        var $modalMoniteringConLeft = $('.modal-popup__monitering--content__left');
+        $modal.draggable();
+        $modal.resizable({
+          resize: function(e, ui){
+            var $this = $(this);
+            var conH = $this.find($modalMoniteringContent).height() - 50;
+
+            if ($this.find($modalMoniteringContent).is('.w1920')) {
+              $this.find($modalMoniteringContent).css({
+                'width': 'inherit',
+                'height': 'inherit'
+              });
+              $this.find($modalMoniteringConLeft).css({
+                'width': '51%',
+                'height': conH,
+                'overflow-y': 'auto'
+              });
+            }
+
+            if ($this.find($modalMoniteringContent).is('.w1080')) {
+              $this.find($modalMoniteringContent).css('width', 'auto');
+              $this.find($modalMoniteringConLeft).css({
+                'width': '35%',
+                'height': conH
+              });
+              $this.find('.monitering-camera__el').css('height', conH);
+            }
+          }
+        });
       });
     </script>
   </body>
