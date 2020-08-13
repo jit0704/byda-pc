@@ -252,7 +252,7 @@
             <div class="modal-popup__monitering--content w1920"> <!-- 200809 w1920 클래스 추가 -->
               <div class="modal-popup__monitering--content__left">
                 <div class="modal-popup__monitering--camera">
-                  <img src="/base/images/@1920x1080.png" alt="IP카메라 더미이미지" style="width:100%;">
+                  <img src="/base/images/@1920x1080.png" alt="IP카메라 더미이미지" class="monitering-camera__el">
                 </div>
                 <!-- //modal-popup__monitering--camera -->
                 <div class="list-table">
@@ -421,7 +421,7 @@
             'left': x,
             'top': y
           }).fadeIn(250);
-          
+
           return false;
         });
 
@@ -445,20 +445,42 @@
           }
         });
 
-        // IP카메라 Resizable 200812 수정
-        $ipcamera.resizable({
+        // ################### 200813 : 여기서부터 기존꺼 삭제 후 끝까지 스크립트 수정 및 신규 추가 ###################
+
+        // IP카메라 Resizable 호출
+        ipcameraResiable($ipcamera);
+
+        // 모니터링 확대 팝업 draggable & Resizable
+        var $modal = $('.modal');
+        $modal.draggable();
+        moniteringResizable($modal);
+
+        // IP카메라 해상도 설정 테스트
+        popSizeSet($('#popcall_1'), 500, 600);
+        popSizeSet($('#popcall_2'), 700, 300);
+
+        // 확대팝업 해상도 설정 테스트
+        popSizeSet($('#ex1'), 2600, 1042);
+        popSizeSet($('#ex2'), 1810, 1208);
+      });
+
+      // IP카메라 Resizable 함수
+      // @parms - $ipcameraEl : 해당 팝업 object
+      function ipcameraResiable ($ipcameraEl) {
+        $ipcameraEl.resizable({
           resize: function(e, ui){
             var cameraH = ui.size.height;
             $(this).find('.monitering-item__content').css('height', cameraH - 35); // 35는 ip카메라 타이틀 높이
           }
         });
+      }
 
-        // 모니터링 확대 팝업 draggable & Resizable 200812 수정
-        var $modal = $('.modal');
+      // 모니터링 확대 팝업 Resizable 함수
+      // @parms - $modalEl : 해당 팝업 object
+      function moniteringResizable ($modalEl) {
         var $modalMoniteringContent = $('.modal-popup__monitering--content');
         var $modalMoniteringConLeft = $('.modal-popup__monitering--content__left');
-        $modal.draggable();
-        $modal.resizable({
+        $modalEl.resizable({
           resize: function(e, ui){
             var $this = $(this);
             var conH = $this.find($modalMoniteringContent).height() - 50;
@@ -485,7 +507,55 @@
             }
           }
         });
-      });
+      }
+
+      // 해상도 리사이징 함수 추가
+      // @parms - $popEl    : 해당 팝업 object
+      //          widthNum  : 해상도 너비값
+      //          heightNum : 해상도 높이값
+      function popSizeSet ($popEl, widthNum, heightNum) {
+        if (typeof arguments[0] !== 'number') {
+          $popEl.css({
+            'width': widthNum + 'px',
+            'height': heightNum + 'px'
+          });
+
+          // 셋팅한 해상도 크기에 맞게 IP카메라 재설정
+          if ($popEl.is('.monitering-content__ipcamera')) {
+            var $popH = $popEl.height();
+            $popEl.find('.monitering-item__content').css('height', $popH - 35);
+          }
+          
+          // 셋팅한 해상도 크기에 맞게 확대팝업 재설정
+          if ($popEl.is('.modal')) {
+            var $modalCon = $('.modal-popup__monitering--content');
+            var $modalConLeft = $('.modal-popup__monitering--content__left');
+            $modalCon.css('width', '100%');
+
+            if ($popEl.find($modalCon).is('.w1920')) {
+              var con1920H = $popEl.find($modalCon).height() - 50;
+              $popEl.find($modalCon).css({
+                'width': 'inherit',
+                'height': 'inherit'
+              });
+              $popEl.find($modalConLeft).css({
+                'width': '51%',
+                'height': con1920H,
+                'overflow-y': 'auto'
+              });
+            }
+
+            if ($popEl.find($modalCon).is('.w1080')) {
+              var con1080H = $popEl.find($modalCon).height() - 50;
+              $popEl.find($modalConLeft).css({
+                'width': '35%',
+                'height': con1080H
+              });
+              $popEl.find('.monitering-camera__el').css('height', con1080H);
+            }
+          }
+        } else return;
+      }
     </script>
   </body>
 </html>
