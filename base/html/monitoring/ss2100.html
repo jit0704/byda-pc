@@ -422,6 +422,10 @@
             'top': y
           }).fadeIn(250);
 
+          // 200816 추가
+          popStylObj.popStyleGet($this, $($hash));
+          popStylObj.popStyleSet($this, $($hash));
+
           return false;
         });
 
@@ -442,6 +446,9 @@
           stop: function(){
             $ipcamera.css('z-index', '0');
             $(this).css('z-index', '10');
+            // 200816 추가
+            var icoHref = '#' + $(this).attr('id');
+            popStylObj.popStyleGet($('a[href="'+icoHref+'"]'), $(this));
           }
         });
 
@@ -451,8 +458,21 @@
         ipcameraResiable($ipcamera);
 
         // 모니터링 확대 팝업 draggable & Resizable
+        // 200816 수정
         var $modal = $('.modal');
-        $modal.draggable();
+        $modal.on($.modal.OPEN, function(event, modal) {
+          var thisPop = '#' + modal.$elm.attr('id');
+          var ipCamPop = '#' + $('a[href="'+thisPop+'"]').closest('.monitering-content__ipcamera').attr('id');
+          popStylObj.popStyleGet($('a[href="'+ipCamPop+'"]'), modal.$elm);
+          popStylObj.popStyleSet($('a[href="'+ipCamPop+'"]'), modal.$elm);
+        });
+        $modal.draggable({
+          stop: function(){
+            var thisPop = '#' + $(this).attr('id');
+            var ipCamPop = '#' + $('a[href="'+thisPop+'"]').closest('.monitering-content__ipcamera').attr('id');
+            popStylObj.popStyleGet($('a[href="'+ipCamPop+'"]'), $(this));
+          }
+        });
         moniteringResizable($modal);
 
         // IP카메라 해상도 설정 테스트
@@ -464,13 +484,47 @@
         popSizeSet($('#ex2'), 1810, 1208);
       });
 
+      // ip카메라 팝업 및 확대 팝업 위치, 크기 style정보 저장 객체 : 200816 추가
+      var popStylObj = {
+        popStyleGet: function ($popElHandler, $popEl) {
+          setTimeout(function(){
+            var styleInfo,
+                styleInfo2;
+            if ($popEl.is('.monitering-content__ipcamera')) {
+              styleInfo = $popEl.attr('style');
+            }
+            if ($popEl.is('.modal')) {
+              styleInfo2 = $popEl.attr('style');
+            }
+            $popElHandler.attr({
+              'data-savestyle-ipcam': styleInfo,
+              'data-savestyle-expandpop': styleInfo2
+            });
+            //console.log(StyelArray);
+          }, 280);
+        },
+        popStyleSet: function ($popElHandler, $popEl) {
+          var saveStyleIpcam = $popElHandler.attr('data-savestyle-ipcam');
+          var saveStyleExpandpop = $popElHandler.attr('data-savestyle-expandpop');
+          if (saveStyleIpcam !== undefined && $popEl.is('.monitering-content__ipcamera')) {
+            $popEl.attr('style', saveStyleIpcam).show();
+          }
+          if (saveStyleExpandpop !== undefined && $popEl.is('.modal')) {
+            $popEl.attr('style', saveStyleExpandpop).show();
+            // console.log(saveStyleExpandpop);
+          }
+        }
+      }
+
       // IP카메라 Resizable 함수
       // @parms - $ipcameraEl : 해당 팝업 object
       function ipcameraResiable ($ipcameraEl) {
         $ipcameraEl.resizable({
           resize: function(e, ui){
             var cameraH = ui.size.height;
+            var thisPop = '#' + $(this).attr('id'); // 200816 추가
             $(this).find('.monitering-item__content').css('height', cameraH - 35); // 35는 ip카메라 타이틀 높이
+            popStylObj.popStyleGet($('a[href="'+thisPop+'"]'), $(this)); // 200816 추가
           }
         });
       }
@@ -505,6 +559,11 @@
               });
               $this.find('.monitering-camera__el').css('height', conH);
             }
+
+            // 200816 추가
+            var thisPop = '#' + $this.attr('id');
+            var ipCamPop = '#' + $('a[href="'+thisPop+'"]').closest('.monitering-content__ipcamera').attr('id');
+            popStylObj.popStyleGet($('a[href="'+ipCamPop+'"]'), $this);
           }
         });
       }
