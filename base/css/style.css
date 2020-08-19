@@ -1334,7 +1334,7 @@ table {
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
-  padding-right: 30px;
+  margin-right: 30px;
 }
 
 .monitering-content .monitering-item__chart-wrap .monitering-item__title {
@@ -1342,13 +1342,17 @@ table {
 }
 
 .monitering-content .monitering-item__listable-wrap {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  width: 1500px;
 }
 
 .monitering-content .monitering-item__listable-wrap .monitering-item__title {
   background: #49485f;
+}
+
+.monitering-item.w-auto {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
 }
 
 .monitering-item .monitering-item__title {
@@ -1387,8 +1391,8 @@ table {
   padding: 10px 30px;
 }
 
-.monitering-item .monitering-item__content .list-table__inner {
-  height: 540px;
+.monitering-item .monitering-item__content .list-table__inner table {
+  table-layout: fixed;
 }
 
 .monitering-item .monitering-item__content .list-table th {

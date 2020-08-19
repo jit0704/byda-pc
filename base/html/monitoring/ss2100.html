@@ -71,7 +71,7 @@
               <!-- //monitering-item__content -->
             </div>
             <!-- //monitering-item -->
-            <div class="monitering-item monitering-item__listable-wrap">
+            <div class="monitering-item monitering-item__listable-wrap" style=""> <!-- 200819 검지로그 width값 수정이 필요하면 inline style속성으로 넣어주시면 됩니다. -->
               <div class="monitering-item__title box-wrap__algin"><span class="box-wrap__algin--left">RADAR</span></div>
               <div class="monitering-item__content">
                 <div class="list-table list-table__bodyscroll">
@@ -474,6 +474,69 @@
           }
         });
         moniteringResizable($modal);
+
+        // 차트, 검지로그 draggable & Resizable : 200819 추가
+        var $chart = $('.monitering-item__chart-wrap');
+        var $gumjiLog = $('.monitering-item__listable-wrap');
+        var mItem = {
+          zIndex ($el, $this) { // 각 draggable 요소 z-index값 설정
+            $el.css('z-index', '0');
+            $this.css('z-index', '1');
+          },
+          conHeightInit (ui) { // 각 요소 컨텐츠 높이 초기화
+            var $el = ui.element;
+            var $titH = $el.find('.monitering-item__title').height();
+            $el.addClass('w-auto').find('.monitering-item__content > div').css('height', ui.size.height - $titH + 'px');
+          }
+        };
+        
+        $chart.draggable({
+          containment: '.container',
+          create: function(){
+            var $parent = $(this).parent().width();
+            var $nextEl = $(this).next().width() + 30; // 30은 $chart div의 margin-right값
+            $(this).addClass('w-auto').css('width', $parent - $nextEl + 'px');
+          },
+          drag: function(){
+            mItem.zIndex($gumjiLog, $(this));
+          },
+          stop: function(){
+            mItem.zIndex($gumjiLog, $(this));
+          }
+        });
+
+        $chart.resizable({
+          resize: function(e, ui){
+            mItem.conHeightInit(ui);
+            mItem.zIndex($gumjiLog, $(this));
+          }
+        });
+
+        $gumjiLog.draggable({
+          containment: '.container',
+          create: function(){
+            var $left = $(this).offset().left;
+            var $top = $(this).offset().top - $('.gnb-wrap').height();
+            $(this).css({
+              'position': 'absolute',
+              'left': $left + 'px',
+              'top': $top + 'px'
+            });
+          },
+          drag: function(){
+            mItem.zIndex($chart, $(this));
+          },
+          stop: function(){
+            mItem.zIndex($chart, $(this));
+          }
+        });
+
+        $gumjiLog.resizable({
+          resize: function(e, ui){
+            mItem.conHeightInit(ui);
+            mItem.zIndex($chart, $(this));
+          }
+        });
 
         // IP카메라 해상도 설정 테스트
         popSizeSet($('#popcall_1'), 500, 600);
