@@ -1355,6 +1355,10 @@ table {
           flex-grow: 0;
 }
 
+.monitering-item:hover {
+  cursor: move;
+}
+
 .monitering-item .monitering-item__title {
   display: block;
   padding: 0 15px;
