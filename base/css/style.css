@@ -244,8 +244,8 @@ table {
 .modal a.close-modal {
   width: 40px;
   height: 40px;
-  top: 11px;
-  right: 18px;
+  top: 15px;
+  right: 12px;
   background-image: url(/base/images/btn_close.png);
 }
 
@@ -680,11 +680,7 @@ table {
   display: none;
 }
 
-.ui-datepicker {
-  z-index: 12 !important;
-}
-
-.ui-datepicker.zindex0 {
+.datepicker-container.zindex0 {
   z-index: 0 !important;
 }
 
@@ -1372,6 +1368,7 @@ table {
   display: inline-block;
   width: 15px;
   height: 15px;
+  margin-top: -3px;
   vertical-align: middle;
   background: url(/base/images/icon_etc.png) no-repeat 0 0;
 }
@@ -1450,4 +1447,8 @@ table {
 
 .monitering-content__ipcamera .monitering-item__ipcamera img {
   width: 100%;
+}
+
+.modal.ui-draggable .close-modal {
+  top: 3px;
 }

@@ -8,8 +8,11 @@
     <script type="text/javascript" src="/base/js/lib/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/base/js/lib/jquery.modal.min.js"></script>
     <script type="text/javascript" src="/base/js/common/includeHTML.js"></script> <!-- 퍼블리싱 확인용 include -->
+    <script type="text/javascript" src="/base/js/lib/datepicker.min.js"></script> <!-- 200824 추가 -->
+    <script type="text/javascript" src="/base/js/lib/datepicker.ko-KR.js"></script> <!-- 200824 추가 -->
     <script type="text/javascript" src="/base/js/common/ui.js"></script>
     <link rel="stylesheet" type="text/css" href="/base/css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="/base/css/datepicker.min.css"> <!-- 200824 추가 -->
     <link rel="stylesheet" type="text/css" href="/base/css/style.css" />
   </head>
   <body>
@@ -34,7 +37,8 @@
               <div class="form-group__inquiry--bind">
                 <em>조회기간</em>
                 <span class="form-bind">
-                  <input type="text" class="input-calendar input__style1"> <!-- 200803 클래스명 수정 -->
+                  <!-- 200824 data-toggle="datepicker" 추가 -->
+                  <input type="text" class="input-calendar input__style1" data-toggle="datepicker"> <!-- 200803 클래스명 수정 -->
                   <select class="select-box select-box__time">
                     <option>00</option>
                     <option>00</option>
@@ -46,7 +50,8 @@
                 </span>
                 <span class="form-wave">~</span>
                 <span class="form-bind">
-                  <input type="text" class="input-calendar input__style1"> <!-- 200803 클래스명 수정 -->
+                  <!-- 200824 data-toggle="datepicker" 추가 -->
+                  <input type="text" class="input-calendar input__style1" data-toggle="datepicker"> <!-- 200803 클래스명 수정 -->
                   <select class="select-box select-box__time">
                     <option>00</option>
                     <option>00</option>

@@ -27,25 +27,34 @@ function cmmnui () {
     $(document).on('mouseenter', $gnbSelector, function () {
       $gnb.addClass('active');
       $gnbItem.stop().slideDown(280);
-      $('.ui-datepicker').addClass('zindex0'); //200803 추가
+      $('.datepicker-container').addClass('zindex0'); //200824 수정
     });
     $(document).on('mouseleave', $gnbSelector, function () {
       $gnb.removeClass('active');
       $gnbItem.stop().slideUp(280);
-      $('.ui-datepicker').removeClass('zindex0'); //200803 추가
+      $('.datepicker-container').removeClass('zindex0'); //200824 수정
     });
   }, 100);
 
-  // datepicker
-  $('.input-calendar').datepicker({
-    dateFormat: 'yy-mm-dd', //Input Display Format 변경
-    showMonthAfterYear: true, //년도 먼저 나오고, 뒤에 월 표시
-    yearSuffix: "년", //달력의 년도 부분 뒤에 붙는 텍스트
-    monthNamesShort: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'], //달력의 월 부분 텍스트
-    monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'], //달력의 월 부분 Tooltip 텍스트
-    dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'], //달력의 요일 부분 텍스트
-    dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'] //달력의 요일 부분 Tooltip 텍스트
+  // 200824 datepicker 추가
+  $('[data-toggle="datepicker"]').datepicker({
+    language: 'ko-KR',
+    format: 'yyyy-mm-dd',
+    autoHide: true,
+    zIndex: 10
   });
+
+  // datepicker
+  // 200824 기존 datepicker삭제
+  // $('.input-calendar').datepicker({
+  //   dateFormat: 'yy-mm-dd', //Input Display Format 변경
+  //   showMonthAfterYear: true, //년도 먼저 나오고, 뒤에 월 표시
+  //   yearSuffix: "년", //달력의 년도 부분 뒤에 붙는 텍스트
+  //   monthNamesShort: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'], //달력의 월 부분 텍스트
+  //   monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'], //달력의 월 부분 Tooltip 텍스트
+  //   dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'], //달력의 요일 부분 텍스트
+  //   dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'] //달력의 요일 부분 Tooltip 텍스트
+  // });
 
   // 모니터링 chart, 검지로그 컨텐츠 높이 체크 - 200802 추가
   // 200811 삭제
