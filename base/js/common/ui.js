@@ -44,6 +44,13 @@ function cmmnui () {
     zIndex: 10
   });
 
+  // 200826 input autocomplete 비활성화
+  (function(){
+    var inputTxt = $('[type="text"], [type="number"]');
+    var inputCalendar = $('.input-calendar');
+    inputTxt.not(inputCalendar).attr('autocomplete', 'off');
+  })();
+
   // datepicker
   // 200824 기존 datepicker삭제
   // $('.input-calendar').datepicker({
