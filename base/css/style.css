@@ -450,7 +450,6 @@ table {
 }
 
 .modal-popup__monitering--content .modal-popup__monitering--content__right .modal-popup__monitering--chart {
-  padding-top: 30px;
   text-align: left;
 }
 
@@ -1389,7 +1388,6 @@ table {
 
 .monitering-item .monitering-item__content .monitering-item__chart {
   height: 592px;
-  padding: 10px 30px;
 }
 
 .monitering-item .monitering-item__content .list-table__inner table {

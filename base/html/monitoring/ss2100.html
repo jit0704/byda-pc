@@ -65,13 +65,14 @@
               <div class="monitering-item__title box-wrap__algin"><span class="box-wrap__algin--left">Number of Employees</span></div>
               <div class="monitering-item__content">
                 <div class="monitering-item__chart">
-                  차트영역
+                  <!-- 200901 수정 -->
+                  <div id="container" class="chart-con" style="width:2230px;height:592px;border:1px solid #000000;"></div>
                 </div>
               </div>
               <!-- //monitering-item__content -->
             </div>
             <!-- //monitering-item -->
-            <div class="monitering-item monitering-item__listable-wrap" style=""> <!-- 200819 검지로그 width값 수정이 필요하면 inline style속성으로 넣어주시면 됩니다. -->
+            <div class="monitering-item monitering-item__listable-wrap"> <!-- 200819 검지로그 width값 수정이 필요하면 inline style속성으로 넣어주시면 됩니다. -->
               <div class="monitering-item__title box-wrap__algin"><span class="box-wrap__algin--left">RADAR</span></div>
               <div class="monitering-item__content">
                 <div class="list-table list-table__bodyscroll">
@@ -296,7 +297,8 @@
               <!-- //modal-popup__monitering--content__left -->
               <div class="modal-popup__monitering--content__right">
                 <div class="modal-popup__monitering--chart">
-                  차트 영역
+                  <!-- 200901 수정 -->
+                  <div id="container2" class="chart-con" style="width:930px;height:732px;border:1px solid #000000;"></div>
                 </div>
               </div>
             </div>
@@ -390,7 +392,8 @@
                 </div>
                 <!-- //box-wrap__algin -->
                 <div class="modal-popup__monitering--chart">
-                  차트 영역
+                  <!-- 200901 수정 -->
+                  <div id="container3" class="chart-con" style="width:1120px;height:890px;border:1px solid #000000; margin-top:10px"></div>
                 </div>
               </div>
             </div>
@@ -509,6 +512,12 @@
           resize: function(e, ui){
             mItem.conHeightInit(ui);
             mItem.zIndex($gumjiLog, $(this));
+            // 200901 추가
+            var chartHeight = $(this).find('.monitering-item__chart').height();
+            $(this).find('.monitering-item__chart .chart-con').css({
+              'width': '100%',
+              'height': chartHeight + 'px'
+            });
           }
         });
 
@@ -597,6 +606,8 @@
       function moniteringResizable ($modalEl) {
         var $modalMoniteringContent = $('.modal-popup__monitering--content');
         var $modalMoniteringConLeft = $('.modal-popup__monitering--content__left');
+        var $modalMoniteringConRight = $('.modal-popup__monitering--content__right'); // 200901 추가
+        var $modalMoniteringChart =  $('.modal-popup__monitering--chart'); // 200901 추가
         $modalEl.resizable({
           resize: function(e, ui){
             var $this = $(this);
@@ -612,6 +623,8 @@
                 'height': conH,
                 'overflow-y': 'auto'
               });
+              // 200901 추가
+              $this.find($modalMoniteringConRight).css('height', conH).children($modalMoniteringChart).css('height', 'inherit');
             }
 
             if ($this.find($modalMoniteringContent).is('.w1080')) {
@@ -621,12 +634,22 @@
                 'height': conH
               });
               $this.find('.monitering-camera__el').css('height', conH);
+              // 200901 추가
+              var $tblHeight =  $this.find('.box-wrap__algin').height();
+              $this.find($modalMoniteringConRight).css('height', conH - $tblHeight).find($modalMoniteringChart).css('height', 'inherit');
             }
 
             // 200816 추가
             var thisPop = '#' + $this.attr('id');
             var ipCamPop = '#' + $('a[href="'+thisPop+'"]').closest('.monitering-content__ipcamera').attr('id');
             popStylObj.popStyleGet($('a[href="'+ipCamPop+'"]'), $this);
+
+            // 200901 추가
+            var modalChartH = $this.find($modalMoniteringChart).height();
+            $this.find($modalMoniteringChart).children('.chart-con').css({
+              'width': '100%',
+              'height': modalChartH + 'px'
+            });
           }
         });
       }
