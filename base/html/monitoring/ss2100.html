@@ -8,6 +8,7 @@
     <script type="text/javascript" src="/base/js/lib/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/base/js/lib/jquery.modal.min.js"></script>
     <script type="text/javascript" src="/base/js/common/includeHTML.js"></script> <!-- 퍼블리싱 확인용 include -->
+    <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
     <script type="text/javascript" src="/base/js/common/ui.js"></script>
     <link rel="stylesheet" type="text/css" href="/base/css/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="/base/css/style.css" />
@@ -202,7 +203,7 @@
                 <span class="box-wrap__algin--left">RADAR ID1</span>
                 <span class="box-wrap__algin--right">
                   <!-- 카메라 확대 보기 버튼 클릭시 모니터링 팝업 호출 -->
-                  <a href="#ex1" class="btn-monitering__extend btn__modal--open"><em class="hidden">카메라 확대 보기</em></a>
+                  <a href="#ex2" class="btn-monitering__extend btn__modal--open"><em class="hidden">카메라 확대 보기</em></a>
                   <a href="#" class="btn-monitering__close"><em class="hidden">카메라 닫기</em></a>
                 </span>
               </div>
@@ -222,7 +223,7 @@
               <div class="monitering-item__title box-wrap__algin">
                 <span class="box-wrap__algin--left">RADAR ID2</span>
                 <span class="box-wrap__algin--right">
-                  <a href="#ex2" class="btn-monitering__extend btn__modal--open"><em class="hidden">카메라 확대 보기</em></a>
+                  <a href="#ex1" class="btn-monitering__extend btn__modal--open"><em class="hidden">카메라 확대 보기</em></a>
                   <a href="#" class="btn-monitering__close"><em class="hidden">카메라 닫기</em></a>
                 </span>
               </div>
@@ -554,6 +555,72 @@
         // 확대팝업 해상도 설정 테스트
         popSizeSet($('#ex1'), 2600, 1042);
         popSizeSet($('#ex2'), 1810, 1208);
+
+        // 확대팝업에 들어가는 하이차트 예제(퍼블리싱 확인용) / 200906 추가
+        var chartEl = document.querySelectorAll('.modal-popup__monitering--chart');
+        chartEl.forEach(function(el){
+          var chartId = el.querySelector('.chart-con').getAttribute('id');
+          Highcharts.chart(chartId, {
+            
+            chart: {
+              type: 'line',
+            },
+
+            title: {
+              text: 'Solar Employment Growth by Sector, 2010-2016'
+            },
+
+            subtitle: {
+              text: 'Source: thesolarfoundation.com'
+            },
+
+            yAxis: {
+              title: {
+                text: 'Number of Employees'
+              }
+            },
+
+            xAxis: {
+              accessibility: {
+                rangeDescription: 'Range: 2010 to 2017'
+              }
+            },
+
+            legend: {
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'middle'
+            },
+
+            plotOptions: {
+              series: {
+                label: {
+                  connectorAllowed: false
+                },
+                pointStart: 2010
+              }
+            },
+
+            series: [{
+              name: 'Installation',
+              data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+            }, {
+              name: 'Manufacturing',
+              data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+            }, {
+              name: 'Sales & Distribution',
+              data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+            }, {
+              name: 'Project Development',
+              data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+            }, {
+              name: 'Other',
+              data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
+            }]
+
+          });
+        });
+      
       });
 
       // ip카메라 팝업 및 확대 팝업 위치, 크기 style정보 저장 객체 : 200816 추가
@@ -612,6 +679,7 @@
           resize: function(e, ui){
             var $this = $(this);
             var conH = $this.find($modalMoniteringContent).height() - 50;
+            window.dispatchEvent(new Event('resize')); // 200906 추가
 
             if ($this.find($modalMoniteringContent).is('.w1920')) {
               $this.find($modalMoniteringContent).css({
@@ -630,7 +698,7 @@
             if ($this.find($modalMoniteringContent).is('.w1080')) {
               $this.find($modalMoniteringContent).css('width', 'auto');
               $this.find($modalMoniteringConLeft).css({
-                'width': '35%',
+                'width': '40%', // 200906 수정
                 'height': conH
               });
               $this.find('.monitering-camera__el').css('height', conH);
@@ -693,7 +761,7 @@
             if ($popEl.find($modalCon).is('.w1080')) {
               var con1080H = $popEl.find($modalCon).height() - 50;
               $popEl.find($modalConLeft).css({
-                'width': '35%',
+                'width': '40%', // 200906 수정
                 'height': con1080H
               });
               $popEl.find('.monitering-camera__el').css('height', con1080H);
