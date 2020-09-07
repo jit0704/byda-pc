@@ -679,6 +679,7 @@
           resize: function(e, ui){
             var $this = $(this);
             var conH = $this.find($modalMoniteringContent).height() - 50;
+            $modalMoniteringConRight.css('min-width', '0');  // 200907 추가
             window.dispatchEvent(new Event('resize')); // 200906 추가
 
             if ($this.find($modalMoniteringContent).is('.w1920')) {
