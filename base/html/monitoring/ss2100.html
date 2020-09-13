@@ -210,7 +210,14 @@
               <div class="monitering-item__content">
                 <div class="monitering-item__ipcamera">
                   <!-- 200812 이곳에 카메라영상이 삽입되면 해당 요소에 monitering-item__el 클래스 추가해야합니다. -->
-                  <img src="/base/images/@1080x1920.png" alt="IP카메라 더미이미지" class="monitering-item__el">
+                  <!-- <img src="/base/images/@1080x1920.png" alt="IP카메라 더미이미지" class="monitering-item__el"> -->
+                  <!-- 200913 object 요소에 monitering-item__el 클래스 추가 -->
+                  <object width="100%" height="100%" data="https://map.kakao.com/flash/cctvVideo.swf" type="application/x-shockwave-flash" class="monitering-item__el">
+                    <param name="allowfullscreen" value="true">
+                    <param name="allowScriptAccess" value="always">
+                    <param name="quality" value="high">
+                    <param name="bgcolor" value="#000000">
+                  </object>
                 </div>
               </div>
               <!-- //monitering-item__content -->
@@ -229,7 +236,14 @@
               </div>
               <div class="monitering-item__content">
                 <div class="monitering-item__ipcamera">
-                  <img src="/base/images/@1920x1080.png" alt="IP카메라 더미이미지" class="monitering-item__el">
+                  <!-- <img src="/base/images/@1920x1080.png" alt="IP카메라 더미이미지" class="monitering-item__el"> -->
+                  <!-- 200913 object 요소에 monitering-item__el 클래스 추가 -->
+                  <object width="100%" height="100%" data="https://map.kakao.com/flash/cctvVideo.swf" type="application/x-shockwave-flash" class="monitering-item__el">
+                    <param name="allowfullscreen" value="true">
+                    <param name="allowScriptAccess" value="always">
+                    <param name="quality" value="high">
+                    <param name="bgcolor" value="#000000">
+                  </object>
                 </div>
               </div>
               <!-- //monitering-item__content -->
@@ -254,7 +268,14 @@
             <div class="modal-popup__monitering--content w1920"> <!-- 200809 w1920 클래스 추가 -->
               <div class="modal-popup__monitering--content__left">
                 <div class="modal-popup__monitering--camera">
-                  <img src="/base/images/@1920x1080.png" alt="IP카메라 더미이미지" class="monitering-camera__el">
+                  <!-- <img src="/base/images/@1920x1080.png" alt="IP카메라 더미이미지" class="monitering-camera__el"> -->
+                  <!-- 200913 object 요소에 monitering-camera__el 클래스 추가 -->
+                  <object width="100%" height="100%" data="https://map.kakao.com/flash/cctvVideo.swf" type="application/x-shockwave-flash" class="monitering-camera__el">
+                    <param name="allowfullscreen" value="true">
+                    <param name="allowScriptAccess" value="always">
+                    <param name="quality" value="high">
+                    <param name="bgcolor" value="#000000">
+                  </object>
                 </div>
                 <!-- //modal-popup__monitering--camera -->
                 <div class="list-table">
@@ -325,7 +346,14 @@
               <div class="modal-popup__monitering--content__left">
                 <div class="modal-popup__monitering--camera">
                   <!-- 200812 이곳에 카메라영상이 삽입되면 해당 요소에 monitering-camera__el 클래스 추가해야합니다. -->
-                  <img src="/base/images/@1080x1920.png" alt="IP카메라 더미이미지" class="monitering-camera__el">
+                  <!-- <img src="/base/images/@1080x1920.png" alt="IP카메라 더미이미지" class="monitering-camera__el"> -->
+                  <!-- 200913 object 요소에 monitering-camera__el 클래스 추가 -->
+                  <object width="100%" height="100%" data="https://map.kakao.com/flash/cctvVideo.swf" type="application/x-shockwave-flash" class="monitering-camera__el">
+                    <param name="allowfullscreen" value="true">
+                    <param name="allowScriptAccess" value="always">
+                    <param name="quality" value="high">
+                    <param name="bgcolor" value="#000000">
+                  </object>
                 </div>
                 <!-- //modal-popup__monitering--camera -->
               </div>
@@ -699,6 +727,10 @@
                 'width': '51%',
                 'height': conH,
                 'overflow-y': 'auto'
+              });
+              // 200913 추가
+              $this.find('.monitering-camera__el').css({
+                'height': ($this.find($modalMoniteringConLeft).height() - $this.find($modalMoniteringConLeft).children('.list-table').height() - 34) + 'px'
               });
               // 200901 추가
               $this.find($modalMoniteringConRight).css('height', conH).children($modalMoniteringChart).css('height', 'inherit');

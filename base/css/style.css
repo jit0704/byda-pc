@@ -425,6 +425,7 @@ table {
 
 .modal-popup__monitering--content .modal-popup__monitering--content__left .monitering-camera__el {
   width: 100%;
+  border-radius: 0 0 8px 8px;
 }
 
 .modal-popup__monitering--content .modal-popup__monitering--content__left .modal-popup__monitering--camera {
@@ -1405,6 +1406,10 @@ table {
   overflow: hidden;
   display: none;
   cursor: move;
+}
+
+.monitering-content__ipcamera .ui-resizable-se {
+  z-index: 10 !important;
 }
 
 .monitering-content__ipcamera.w1080 {
