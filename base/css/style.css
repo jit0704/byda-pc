@@ -667,6 +667,82 @@ table {
   display: none;
 }
 
+.multi-selectbox {
+  position: relative;
+}
+
+.multi-selectbox__btn {
+  min-width: 200px;
+  height: 52px;
+  line-height: 52px;
+  padding: 0 35px 0 15px;
+  border-radius: 4px;
+  background: url(/base/images/icon_invertriangle.png) no-repeat 95% 50% #49516d;
+  background-position: 93% 50%;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.multi-selectbox__list {
+  display: none;
+  position: absolute;
+  top: 52px;
+  left: 0;
+  width: 100%;
+  background: #212637;
+}
+
+.multi-selectbox__list ul {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-bottom: 10px;
+}
+
+.multi-selectbox__list ul li {
+  padding-top: 10px;
+}
+
+.multi-selectbox__list input + label {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #212637;
+  border-radius: 0;
+  color: #fff;
+}
+
+.multi-selectbox__list input + label::before {
+  content: "";
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 0 10px;
+  background: #49516d;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+.multi-selectbox__list input:checked + label {
+  background: #212637;
+}
+
+.multi-selectbox__list input:checked + label::before {
+  background: url(/base/images/icon_check.png) no-repeat 50% 50% #4d85ff;
+}
+
+.multi-selectbox__confirm {
+  display: block;
+  width: 100%;
+  line-height: 35px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  background: #4d85ff;
+  border-radius: 0 0 4px 4px;
+}
+
 .datepicker-container.zindex0 {
   z-index: 0 !important;
 }

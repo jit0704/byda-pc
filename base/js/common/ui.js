@@ -51,6 +51,14 @@ function cmmnui () {
     inputTxt.not(inputCalendar).attr('autocomplete', 'off');
   })();
 
+  // 200920 멀티셀렉트박스 드롭다운 효과 추가
+  $('.multi-selectbox__btn').on('click', function(){
+    $(this).next().slideToggle(200);
+  });
+  $('.multi-selectbox__confirm').on('click', function(){
+    $('.multi-selectbox__btn').trigger('click');
+  });
+
   // datepicker
   // 200824 기존 datepicker삭제
   // $('.input-calendar').datepicker({
