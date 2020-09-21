@@ -694,6 +694,10 @@ table {
   background: #212637;
 }
 
+.multi-selectbox__list .all-chk {
+  padding: 10px 0;
+}
+
 .multi-selectbox__list ul {
   max-height: 200px;
   overflow-y: auto;
@@ -702,6 +706,10 @@ table {
 
 .multi-selectbox__list ul li {
   padding-top: 10px;
+}
+
+.multi-selectbox__list ul li:first-child {
+  padding-top: 0;
 }
 
 .multi-selectbox__list input + label {

@@ -9,8 +9,10 @@
     <script type="text/javascript" src="/base/js/lib/jquery.modal.min.js"></script>
     <script type="text/javascript" src="/base/js/common/includeHTML.js"></script> <!-- 퍼블리싱 확인용 include -->
     <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript" src="/base/js/lib/video.min.7.8.4.js"></script>
     <script type="text/javascript" src="/base/js/common/ui.js"></script>
     <link rel="stylesheet" type="text/css" href="/base/css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="/base/css/video-js.min.7.8.4.css">
     <link rel="stylesheet" type="text/css" href="/base/css/style.css" />
     <!-- 퍼블리싱 확인용 style -->
     <style>
@@ -348,12 +350,16 @@
                   <!-- 200812 이곳에 카메라영상이 삽입되면 해당 요소에 monitering-camera__el 클래스 추가해야합니다. -->
                   <!-- <img src="/base/images/@1080x1920.png" alt="IP카메라 더미이미지" class="monitering-camera__el"> -->
                   <!-- 200913 object 요소에 monitering-camera__el 클래스 추가 -->
-                  <object width="100%" height="100%" data="https://map.kakao.com/flash/cctvVideo.swf" type="application/x-shockwave-flash" class="monitering-camera__el">
+                  <!-- <object width="100%" height="100%" data="https://map.kakao.com/flash/cctvVideo.swf" type="application/x-shockwave-flash" class="monitering-camera__el">
                     <param name="allowfullscreen" value="true">
                     <param name="allowScriptAccess" value="always">
                     <param name="quality" value="high">
                     <param name="bgcolor" value="#000000">
-                  </object>
+                  </object> -->
+                  <!-- 200921 추가 -->
+                  <video id="_player" class="video-js vjs-big-play-centered monitering-camera__el" controls autoplay="muted" preload="auto" width="100%" height="100%">
+                    <source src="" type="application/x-mpegURL"></source>
+                  </video>
                 </div>
                 <!-- //modal-popup__monitering--camera -->
               </div>
